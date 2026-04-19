@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	claudecodego "claude-code-go"
+	claudecodego "github.com/oceanz0312/claude-code-go"
 )
 
 const initialPrompt = "使用 ai-friendly-evaluate 技能评估当前仓库的 ai-friendly 分数"

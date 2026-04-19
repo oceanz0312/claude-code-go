@@ -20,7 +20,7 @@ import (
 	"context"
 	"fmt"
 
-	claudecodego "claude-code-go"
+	claudecodego "github.com/oceanz0312/claude-code-go"
 )
 
 func main() {
@@ -98,7 +98,7 @@ This project is a **complete Go port** of [claude-code-node](https://github.com/
 ## Installation
 
 ```bash
-go get claude-code-go
+go get github.com/oceanz0312/claude-code-go
 ```
 
 ---

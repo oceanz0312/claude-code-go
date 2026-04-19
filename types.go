@@ -5,7 +5,7 @@ import (
 	"errors"
 	"reflect"
 
-	"claude-code-go/parser"
+	"github.com/oceanz0312/claude-code-go/parser"
 )
 
 type PermissionMode string

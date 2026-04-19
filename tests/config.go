@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	claudecodego "claude-code-go"
+	claudecodego "github.com/oceanz0312/claude-code-go"
 )
 
 type AuthMode string

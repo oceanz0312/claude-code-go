@@ -20,7 +20,7 @@ import (
 	"context"
 	"fmt"
 
-	claudecodego "claude-code-go"
+	claudecodego "github.com/oceanz0312/claude-code-go"
 )
 
 func main() {
@@ -98,7 +98,7 @@ func main() {
 ## 安装
 
 ```bash
-go get claude-code-go
+go get github.com/oceanz0312/claude-code-go
 ```
 
 ---

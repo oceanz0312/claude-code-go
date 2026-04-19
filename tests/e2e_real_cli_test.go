@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	claudecodego "claude-code-go"
+	claudecodego "github.com/oceanz0312/claude-code-go"
 )
 
 type authResponse struct {

@@ -8,7 +8,7 @@ import (
 	"strings"
 	"sync"
 
-	"claude-code-go/parser"
+	"github.com/oceanz0312/claude-code-go/parser"
 )
 
 type abortSignalBinding struct {
