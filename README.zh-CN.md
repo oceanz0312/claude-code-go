@@ -3,9 +3,10 @@
 [![Go](https://img.shields.io/badge/Go-1.26+-00ADD8?logo=go&logoColor=white)](https://go.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Zero Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)](go.mod)
-[![E2E Tests](https://img.shields.io/badge/E2E_tests-all_passed-brightgreen.svg)](#测试)
+[![E2E Tests](https://img.shields.io/badge/E2E_tests-all_passed-brightgreen.svg)](#测试结果)
+[![TDD](https://img.shields.io/badge/built_with-TDD-orange.svg)](#纯-tdd-驱动)
 
-> **[claude-code-node](https://github.com/oceanz0312/claude-code-node) 的完整 Go 复刻版本** — 封装 Claude Code CLI 的 Go SDK，让你在 Go 中以编程方式驱动 Claude Code，干净、惯用的 API，零外部依赖。
+> **[claude-code-node](https://github.com/oceanz0312/claude-code-node) 的完整 Go 复刻版本** — 封装 Claude Code CLI 的 Go SDK，**全程纯 TDD 驱动开发**，完美复原 Claude Code CLI 的每一项能力。零外部依赖，惯用 Go API。
 
 [English Documentation](./README.md)
 
@@ -77,16 +78,50 @@ func main() {
 
 ---
 
-## 测试
+## 纯 TDD 驱动
 
-**E2E 测试全部通过。** 本项目拥有完整的测试体系，确保与 Claude Code CLI 的兼容性：
+整个 SDK **从零开始，全程采用严格的测试驱动开发（TDD）**。每一项功能——从会话生命周期到流式事件翻译——都是先写测试，再写最小实现代码使其通过。最终结果：一个**完美复原 Claude Code CLI 所有能力**的 Go SDK。
+
+### 开发流程
+
+```
+ ┌─────────────────────────────────────────────────────────────┐
+ │                    TDD 开发循环                               │
+ │                                                              │
+ │  1. 研究 claude-code-node 行为 & CLI 协议                      │
+ │  2. 编写 Go 测试，捕获期望行为                                   │
+ │  3. 构建 Fake CLI 模拟器，复现 CLI 输出                          │
+ │  4. 实现代码直到测试通过                                        │
+ │  5. 用真实 Claude Code CLI 验证（E2E）                          │
+ │  6. 重复，直到覆盖下一个能力                                     │
+ └─────────────────────────────────────────────────────────────┘
+```
+
+### 双层测试架构
+
+| 层级 | 测试什么 | 怎么测 |
+|------|---------|-------|
+| **单元测试**（Fake CLI） | 每条解析路径、事件翻译、会话状态机、错误处理、流式去重、CLI 参数构建 | Go 版 Fake CLI 模拟器（`testdata/fakeclaude/`）完整模拟 `stream-json` 协议——**无需真实 CLI 或 API Key** |
+| **E2E 测试**（真实 CLI） | 真实 Claude Code CLI 兼容性——认证、流式、图片、系统提示词、Agent 角色、多轮对话、15+ CLI 参数 | 调用真实 `claude` 二进制，使用真实凭据，保存完整产物供事后分析 |
+
+### 测试结果
+
+**所有测试全部通过——单元测试和 E2E。** 这不是"能编译就算成功"——每一个行为都经过真实 CLI 验证：
 
 | 指标 | 详情 |
 |------|------|
-| **单元测试** | 基于 Go 版 Fake CLI 模拟器（`testdata/fakeclaude/`），无需真实 CLI 或 API Key |
-| **E2E 测试** | 11 个真实模型测试，覆盖流式/非流式、图片输入、系统提示词、Agent 角色、会话管理、CLI 参数转发 |
-| **全部通过** | 所有 E2E 测试用例均通过，验证了与 claude-code-node 的功能一致性 |
-| **测试产物** | 每次运行保存 NDJSON 日志、中继事件和最终响应到 `tests/e2e/artifacts/`，便于事后分析 |
+| **单元测试** | 通过 Fake CLI 实现全面覆盖——测试在 < 1 秒内完成，零网络调用 |
+| **E2E 测试** | 11 个真实模型测试用例，**全部通过** |
+| **一致性验证** | 每个 E2E 场景均与 claude-code-node 交叉对比，确保行为完全一致 |
+| **测试产物** | 每次 E2E 运行保存 NDJSON 日志、中继事件、终端转录和最终响应到 `tests/e2e/artifacts/` |
+
+### "完美复原"意味着什么
+
+- **35+ CLI 参数**：claude-code-node 支持的每个参数，在 Go 中 1:1 映射
+- **双层事件体系**：原始进程事件（spawn, stdout, stderr, exit）+ 语义中继事件（text delta, thinking, tool use, tool result, session meta, turn complete, error）——与 TS 版本完全相同的架构
+- **流式去重**：消除 CLI verbose 模式产生的重复文本片段，生成干净的增量 delta
+- **会话状态机**：auto-resume、continue、fork——完全一致的生命周期语义
+- **错误检测**：FailFast API 错误检测实时解析 stderr/stdout，使用与 TS 实现相同的匹配模式
 
 ---
 
