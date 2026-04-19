@@ -1,0 +1,8 @@
+{
+  "items": [
+    {
+      "text": "Reply with strict JSON only: {\"auth_mode\":\"auth-token\",\"status\":\"ok\",\"short_answer\":\"\u003cone short sentence\u003e\"}. Do not use markdown.",
+      "type": "text"
+    }
+  ]
+}

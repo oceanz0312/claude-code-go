@@ -1,0 +1,51 @@
+{
+  "artifactDir": "/Users/bytedance/Documents/ttls_repo/claude-code-go/tests/e2e/artifacts/2026-04-19T13-50-11-000Z-00-43611/streaming-partials-auth-token",
+  "authMode": "auth-token",
+  "caseName": "streaming-partials-auth-token",
+  "inputSummary": {
+    "prompt": "Count from 1 to 8 in one sentence, but stream naturally."
+  },
+  "metadata": {
+    "rawEventLogFiles": [
+      "claude-raw-events-2026-04-19T13-50-27-000000000Z-00-43611.ndjson"
+    ]
+  },
+  "rawEventCount": 781,
+  "rawEventLogFiles": [
+    "claude-raw-events-2026-04-19T13-50-27-000000000Z-00-43611.ndjson"
+  ],
+  "relayEventCount": 768,
+  "sessionOptionsSummary": {
+    "additionalDirectories": null,
+    "agent": "",
+    "allowedTools": null,
+    "bare": true,
+    "betas": "",
+    "chrome": null,
+    "cwd": "",
+    "dangerouslySkipPermissions": true,
+    "debug": null,
+    "debugFile": "",
+    "disableSlashCommands": false,
+    "disallowedTools": null,
+    "effort": "",
+    "excludeDynamicSystemPromptSections": false,
+    "fallbackModel": "",
+    "includeHookEvents": false,
+    "includePartialMessages": true,
+    "maxBudgetUsd": null,
+    "maxTurns": null,
+    "mcpConfig": null,
+    "model": "sonnet",
+    "name": "",
+    "noSessionPersistence": false,
+    "permissionMode": "",
+    "pluginDir": null,
+    "settingSources": "",
+    "settings": "",
+    "strictMcpConfig": false,
+    "tools": "",
+    "verbose": true,
+    "worktree": ""
+  }
+}

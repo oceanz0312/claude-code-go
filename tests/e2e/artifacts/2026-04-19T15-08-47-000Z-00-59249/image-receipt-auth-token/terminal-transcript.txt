@@ -1,0 +1,9 @@
+[E2E] case=image-receipt-auth-token
+[E2E] auth_mode=auth-token
+[E2E] options={"additionalDirectories":null,"agent":"","allowedTools":null,"bare":true,"betas":"","chrome":null,"cwd":"","dangerouslySkipPermissions":true,"debug":null,"debugFile":"","disableSlashCommands":false,"disallowedTools":null,"effort":"","excludeDynamicSystemPromptSections":false,"fallbackModel":"","includeHookEvents":false,"includePartialMessages":true,"maxBudgetUsd":null,"maxTurns":null,"mcpConfig":null,"model":"sonnet","name":"","noSessionPersistence":false,"permissionMode":"","pluginDir":null,"settingSources":"","settings":"","strictMcpConfig":false,"tools":"","verbose":true,"worktree":""}
+[E2E] input={"items":[{"text":"Extract one clearly visible short text snippet from the image. Reply with JSON only: {\"snippet\":\"\u003ctext\u003e\"}","type":"text"},{"path":"/Users/bytedance/Documents/ttls_repo/claude-code-go/testdata/images/receipt-demo.png","type":"local_image"}]}
+[E2E] raw_event_count=472
+[E2E] relay_event_count=459
+[E2E] raw_event_log_files=claude-raw-events-2026-04-19T15-10-00-267Z-59249-rz1lxc.ndjson
+[E2E] final_response={"snippet":"TTLS DEMO STORE"}
+[E2E] artifact_dir=/Users/bytedance/Documents/ttls_repo/claude-code-go/tests/e2e/artifacts/2026-04-19T15-08-47-000Z-00-59249/image-receipt-auth-token

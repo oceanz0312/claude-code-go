@@ -1,0 +1,1350 @@
+[
+  {
+    "model": "claude-sonnet-4-6",
+    "type": "session_meta"
+  },
+  {
+    "content": "The",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " user",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " is",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " asking",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " what",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " token",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " I",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " was",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " asked",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " to",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " remember",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " previously",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " However",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " looking",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " at",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " conversation",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " history",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " provided",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " in",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " context",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " this",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " appears",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " to",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " be",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " start",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " of",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " conversation",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " -",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " there",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " is",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " no",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " previous",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " message",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " from",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " user",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " asking",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " me",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " to",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " remember",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " a",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " token",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".\n\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "Wait",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " let",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " me",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " check",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " context",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " again",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " The",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " system",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " reminder",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " shows",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " today's",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " date",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " and",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " some",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " instructions",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " but",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " there's",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " no",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " previous",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " user",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " message",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " in",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " provided",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " context",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " This",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " looks",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " like",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " a",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " fresh",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " conversation",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".\n\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "However",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " I",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " should",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " be",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " careful",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " -",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " sometimes",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " there",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " can",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " be",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " state",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " carried",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " over",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " or",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " I",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " might",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " have",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " missed",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " something",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " Let",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " me",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " review",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ":\n\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "1",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " The",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " current",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " conversation",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " starts",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " with",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " this",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " message",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " from",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " user",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "2",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " There",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " is",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " no",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " previous",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " user",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " message",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " visible",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " in",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " context",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "3",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " The",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " user",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " is",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " asking",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " what",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " token",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " they",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " asked",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " me",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " to",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " remember",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " \"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "pre",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "viously",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " -",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " implying",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " there",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " was",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " a",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " prior",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " interaction",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".\n\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "Since",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " I",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " don't",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " see",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " any",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " previous",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " interaction",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " in",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " provided",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " context",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " and",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " I",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " don't",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " have",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " access",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " to",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " external",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " memory",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " or",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " previous",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " conversations",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " (",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "unless",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " they're",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " in",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " context",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " window",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "),",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " correct",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " answer",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " should",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " be",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " that",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " I",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " don't",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " remember",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " any",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " token",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " or",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " \"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "none",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\".\n\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "The",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " user",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " specifically",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " asks",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " for",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " JSON",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " only",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ":",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " `",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "{\"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "remember",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "ed",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\":\"\u003c",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "token",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " or",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " none",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\u003e\"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "}`",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\n\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "So",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " I",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " should",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " reply",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " with",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ":",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " `",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "{\"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "remember",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "ed",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\":\"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "none",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "}`",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\n\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "Wait",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " I",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " need",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " to",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " be",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " absolutely",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " sure",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " there",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " isn't",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " some",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " hidden",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " context",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " or",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " previous",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " turn",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " I'm",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " missing",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " Looking",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " at",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " provided",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " context",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ":\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "-",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " System",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " reminder",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " about",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " current",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " date",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "-",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " User",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " message",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ":",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " \"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "What",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " token",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " did",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " I",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ask",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " you",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " to",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " remember",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " previously",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "?",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " Reply",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " with",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " JSON",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " only",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ":",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " {\"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "remember",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "ed",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\":\"\u003c",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "token",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " or",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " none",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\u003e\"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "}\"\n\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "There",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " is",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " indeed",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " no",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " previous",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " turn",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " Therefore",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " answer",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " is",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " none",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".\n\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "I",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " should",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " output",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " exactly",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " JSON",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " format",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " requested",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "{\"",
+    "type": "text_delta"
+  },
+  {
+    "content": "remember",
+    "type": "text_delta"
+  },
+  {
+    "content": "ed",
+    "type": "text_delta"
+  },
+  {
+    "content": "\":\"",
+    "type": "text_delta"
+  },
+  {
+    "content": "none",
+    "type": "text_delta"
+  },
+  {
+    "content": "\"}",
+    "type": "text_delta"
+  },
+  {
+    "contextWindow": 200000,
+    "costUsd": 0.006568200000000001,
+    "inputTokens": 3730,
+    "outputTokens": 337,
+    "sessionId": "1ca1a6fb-c4f4-4259-8af3-07b9a3cef4bb",
+    "type": "turn_complete"
+  }
+]

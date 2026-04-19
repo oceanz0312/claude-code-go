@@ -1,0 +1,20 @@
+[E2E] case=file-prompts-and-directories-auth-token
+[E2E] auth_mode=auth-token
+[E2E] options={"additionalDirectories":["/var/folders/dt/nmb6r95s0j78rxvn4r92w1dm0000gn/T/agent-sdk-e2e-extra-2069703261"],"agent":"","allowedTools":null,"bare":true,"betas":"","chrome":null,"cwd":"/var/folders/dt/nmb6r95s0j78rxvn4r92w1dm0000gn/T/agent-sdk-e2e-1182753654","dangerouslySkipPermissions":true,"debug":null,"debugFile":"","disableSlashCommands":false,"disallowedTools":null,"effort":"","excludeDynamicSystemPromptSections":false,"fallbackModel":"","includeHookEvents":false,"includePartialMessages":true,"maxBudgetUsd":null,"maxTurns":null,"mcpConfig":null,"model":"sonnet","name":"","noSessionPersistence":false,"permissionMode":"","pluginDir":null,"settingSources":"","settings":"","strictMcpConfig":false,"tools":"","verbose":true,"worktree":""}
+[E2E] input={"prompt":"Read the file at /var/folders/dt/nmb6r95s0j78rxvn4r92w1dm0000gn/T/agent-sdk-e2e-1182753654/cwd-probe.txt and the file at /var/folders/dt/nmb6r95s0j78rxvn4r92w1dm0000gn/T/agent-sdk-e2e-extra-2069703261/additional-probe.txt. Reply with one JSON object containing cwd_token, additional_token, system_tag, and append_tag."}
+[E2E] raw_event_count=481
+[E2E] relay_event_count=362
+[E2E] raw_event_log_files=claude-raw-events-2026-04-19T15-10-16-458Z-59249-aob8fj.ndjson
+[E2E] final_response=```json
+{
+  "cwd_token": "CWD_PROBE_TOKEN",
+  "additional_token": "ADDITIONAL_PROBE_TOKEN",
+  "system_tag": "FILE_TAG_GAMMA",
+  "append_tag": "APPEND_FILE_TAG_DELTA"
+}
+```
+
+FILE_TAG_GAMMA
+
+APPEND_FILE_TAG_DELTA
+[E2E] artifact_dir=/Users/bytedance/Documents/ttls_repo/claude-code-go/tests/e2e/artifacts/2026-04-19T15-08-47-000Z-00-59249/file-prompts-and-directories-auth-token

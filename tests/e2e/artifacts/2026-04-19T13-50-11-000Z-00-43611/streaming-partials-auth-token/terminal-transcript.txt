@@ -1,0 +1,9 @@
+[E2E] case=streaming-partials-auth-token
+[E2E] auth_mode=auth-token
+[E2E] options={"additionalDirectories":null,"agent":"","allowedTools":null,"bare":true,"betas":"","chrome":null,"cwd":"","dangerouslySkipPermissions":true,"debug":null,"debugFile":"","disableSlashCommands":false,"disallowedTools":null,"effort":"","excludeDynamicSystemPromptSections":false,"fallbackModel":"","includeHookEvents":false,"includePartialMessages":true,"maxBudgetUsd":null,"maxTurns":null,"mcpConfig":null,"model":"sonnet","name":"","noSessionPersistence":false,"permissionMode":"","pluginDir":null,"settingSources":"","settings":"","strictMcpConfig":false,"tools":"","verbose":true,"worktree":""}
+[E2E] input={"prompt":"Count from 1 to 8 in one sentence, but stream naturally."}
+[E2E] raw_event_count=781
+[E2E] relay_event_count=768
+[E2E] raw_event_log_files=claude-raw-events-2026-04-19T13-50-27-000000000Z-00-43611.ndjson
+[E2E] final_response=I have 1 goal, 2 hands to work with, 3 meals to cook, 4 calls to make, 5 pages to write, 6 emails to send, 7 plants to water, and 8 hours to get it all done.
+[E2E] artifact_dir=/Users/bytedance/Documents/ttls_repo/claude-code-go/tests/e2e/artifacts/2026-04-19T13-50-11-000Z-00-43611/streaming-partials-auth-token
