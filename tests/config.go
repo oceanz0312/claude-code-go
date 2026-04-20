@@ -1,6 +1,7 @@
 package tests
 
 import (
+	"bufio"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -107,7 +108,67 @@ func ListAvailableAuthModes() ([]AuthMode, error) {
 	return modes, nil
 }
 
+// loadDotEnv reads a .env file and populates os environment. Existing env
+// vars are not overwritten so shell-level exports always win.
+func loadDotEnv(path string) error {
+	f, err := os.Open(path)
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+
+	scanner := bufio.NewScanner(f)
+	for scanner.Scan() {
+		line := strings.TrimSpace(scanner.Text())
+		if line == "" || strings.HasPrefix(line, "#") {
+			continue
+		}
+		line = strings.TrimPrefix(line, "export ")
+		idx := strings.IndexByte(line, '=')
+		if idx < 1 {
+			continue
+		}
+		key := strings.TrimSpace(line[:idx])
+		val := strings.TrimSpace(line[idx+1:])
+		// strip optional surrounding quotes
+		if len(val) >= 2 && val[0] == '"' && val[len(val)-1] == '"' {
+			val = val[1 : len(val)-1]
+		}
+		if _, exists := os.LookupEnv(key); !exists {
+			os.Setenv(key, val)
+		}
+	}
+	return scanner.Err()
+}
+
+// findDotEnv walks up from dir looking for a .env file, stopping at the
+// module root (where go.mod lives) or the filesystem root.
+func findDotEnv(dir string) string {
+	for {
+		candidate := filepath.Join(dir, ".env")
+		if _, err := os.Stat(candidate); err == nil {
+			return candidate
+		}
+		if _, err := os.Stat(filepath.Join(dir, "go.mod")); err == nil {
+			break
+		}
+		parent := filepath.Dir(dir)
+		if parent == dir {
+			break
+		}
+		dir = parent
+	}
+	return ""
+}
+
 func loadSecretsFromEnv() (E2ESecrets, error) {
+	// Auto-load .env when running via `go test` without a prior `source .env`.
+	if abs, err := filepath.Abs("."); err == nil {
+		if p := findDotEnv(abs); p != "" {
+			_ = loadDotEnv(p) // best-effort; missing file is fine
+		}
+	}
+
 	secrets := E2ESecrets{
 		Model:     getOptionalString(os.Getenv("E2E_MODEL")),
 		APIKey:    getOptionalString(os.Getenv("E2E_API_KEY")),
