@@ -1,0 +1,9 @@
+[E2E] case=streaming-partials-auth-token
+[E2E] auth_mode=auth-token
+[E2E] options={"additionalDirectories":null,"agent":"","allowedTools":null,"bare":true,"betas":"","chrome":null,"cwd":"","dangerouslySkipPermissions":true,"debug":null,"debugFile":"","disableSlashCommands":false,"disallowedTools":null,"effort":"","excludeDynamicSystemPromptSections":false,"fallbackModel":"","includeHookEvents":false,"includePartialMessages":true,"maxBudgetUsd":null,"maxTurns":null,"mcpConfig":null,"model":"sonnet","name":"","noSessionPersistence":false,"permissionMode":"","pluginDir":null,"settingSources":"","settings":"","strictMcpConfig":false,"tools":"","verbose":true,"worktree":""}
+[E2E] input={"prompt":"Count from 1 to 8 in one sentence, but stream naturally."}
+[E2E] raw_event_count=506
+[E2E] relay_event_count=493
+[E2E] raw_event_log_files=claude-raw-events-2026-04-20T05-33-10-134Z-391-s94380.ndjson
+[E2E] final_response=I grabbed 1 coffee, added 2 sugars, walked 3 blocks, waited 4 minutes, hopped the 5 train, read 6 pages, sent 7 texts, and made 8 new friends by noon.
+[E2E] artifact_dir=/Users/bytedance/Documents/ttls_repo/claude-code-go/tests/e2e/artifacts/2026-04-20T05-32-54-000Z-00-391/streaming-partials-auth-token

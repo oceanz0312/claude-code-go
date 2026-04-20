@@ -1,0 +1,60 @@
+{
+  "artifactDir": "/Users/bytedance/Documents/ttls_repo/claude-code-go/tests/e2e/artifacts/2026-04-20T02-26-40-000Z-00-39571/file-prompts-and-directories-auth-token",
+  "authMode": "auth-token",
+  "caseName": "file-prompts-and-directories-auth-token",
+  "inputSummary": {
+    "prompt": "Read the file at /var/folders/dt/nmb6r95s0j78rxvn4r92w1dm0000gn/T/agent-sdk-e2e-1730371120/cwd-probe.txt and the file at /var/folders/dt/nmb6r95s0j78rxvn4r92w1dm0000gn/T/agent-sdk-e2e-extra-56247957/additional-probe.txt. Reply with one JSON object containing cwd_token, additional_token, system_tag, and append_tag."
+  },
+  "metadata": {
+    "rawEventLogFiles": [
+      "claude-raw-events-2026-04-20T02-28-15-734Z-39571-rjkre6.ndjson"
+    ],
+    "sessionId": "dc4025d3-44e8-4cbf-b62b-50ab83c67bc1",
+    "usage": {
+      "costUsd": 0.009242400000000001,
+      "inputTokens": 7807,
+      "outputTokens": 345,
+      "contextWindow": 200000
+    }
+  },
+  "rawEventCount": 354,
+  "rawEventLogFiles": [
+    "claude-raw-events-2026-04-20T02-28-15-734Z-39571-rjkre6.ndjson"
+  ],
+  "relayEventCount": 236,
+  "sessionOptionsSummary": {
+    "additionalDirectories": [
+      "/var/folders/dt/nmb6r95s0j78rxvn4r92w1dm0000gn/T/agent-sdk-e2e-extra-56247957"
+    ],
+    "agent": "",
+    "allowedTools": null,
+    "bare": true,
+    "betas": "",
+    "chrome": null,
+    "cwd": "/var/folders/dt/nmb6r95s0j78rxvn4r92w1dm0000gn/T/agent-sdk-e2e-1730371120",
+    "dangerouslySkipPermissions": true,
+    "debug": null,
+    "debugFile": "",
+    "disableSlashCommands": false,
+    "disallowedTools": null,
+    "effort": "",
+    "excludeDynamicSystemPromptSections": false,
+    "fallbackModel": "",
+    "includeHookEvents": false,
+    "includePartialMessages": true,
+    "maxBudgetUsd": null,
+    "maxTurns": null,
+    "mcpConfig": null,
+    "model": "sonnet",
+    "name": "",
+    "noSessionPersistence": false,
+    "permissionMode": "",
+    "pluginDir": null,
+    "settingSources": "",
+    "settings": "",
+    "strictMcpConfig": false,
+    "tools": "",
+    "verbose": true,
+    "worktree": ""
+  }
+}

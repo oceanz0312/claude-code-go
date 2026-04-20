@@ -1,0 +1,174 @@
+[
+  {
+    "model": "claude-sonnet-4-6",
+    "type": "session_meta"
+  },
+  {
+    "content": "The",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " user",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " is",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " asking",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " me",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " to",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " reply",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " with",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " JSON",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " only",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ":",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " {\"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "status",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\":\"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "ok",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "}.",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " This",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " is",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " a",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " simple",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " request",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " that",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " requires",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " no",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " additional",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " text",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " just",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " JSON",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " object",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " as",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " specified",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "{\"",
+    "type": "text_delta"
+  },
+  {
+    "content": "status",
+    "type": "text_delta"
+  },
+  {
+    "content": "\":\"",
+    "type": "text_delta"
+  },
+  {
+    "content": "ok",
+    "type": "text_delta"
+  },
+  {
+    "content": "\"}",
+    "type": "text_delta"
+  },
+  {
+    "contextWindow": 200000,
+    "costUsd": 0.004953,
+    "inputTokens": 1436,
+    "outputTokens": 43,
+    "sessionId": "9fb44f7c-b631-4e4a-a7ac-37fdc8a8308b",
+    "type": "turn_complete"
+  }
+]

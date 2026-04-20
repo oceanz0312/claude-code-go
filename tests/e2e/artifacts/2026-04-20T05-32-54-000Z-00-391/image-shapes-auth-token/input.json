@@ -1,0 +1,12 @@
+{
+  "items": [
+    {
+      "text": "Count the obvious geometric shapes in the image. Reply with JSON only: {\"shape_count\":\u003cnumber\u003e,\"shapes\":[\"...\"]}",
+      "type": "text"
+    },
+    {
+      "path": "/Users/bytedance/Documents/ttls_repo/claude-code-go/testdata/images/shapes-demo.png",
+      "type": "local_image"
+    }
+  ]
+}

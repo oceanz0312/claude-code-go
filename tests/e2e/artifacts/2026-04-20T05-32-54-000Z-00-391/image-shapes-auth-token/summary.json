@@ -1,0 +1,67 @@
+{
+  "artifactDir": "/Users/bytedance/Documents/ttls_repo/claude-code-go/tests/e2e/artifacts/2026-04-20T05-32-54-000Z-00-391/image-shapes-auth-token",
+  "authMode": "auth-token",
+  "caseName": "image-shapes-auth-token",
+  "inputSummary": {
+    "items": [
+      {
+        "text": "Count the obvious geometric shapes in the image. Reply with JSON only: {\"shape_count\":\u003cnumber\u003e,\"shapes\":[\"...\"]}",
+        "type": "text"
+      },
+      {
+        "path": "/Users/bytedance/Documents/ttls_repo/claude-code-go/testdata/images/shapes-demo.png",
+        "type": "local_image"
+      }
+    ]
+  },
+  "metadata": {
+    "rawEventLogFiles": [
+      "claude-raw-events-2026-04-20T05-33-29-947Z-391-4do6xb.ndjson"
+    ],
+    "sessionId": "63db9dd7-589d-44b1-9066-c7998eb4c9e9",
+    "usage": {
+      "costUsd": 0.0035910000000000004,
+      "inputTokens": 4103,
+      "outputTokens": 110,
+      "contextWindow": 200000
+    }
+  },
+  "rawEventCount": 122,
+  "rawEventLogFiles": [
+    "claude-raw-events-2026-04-20T05-33-29-947Z-391-4do6xb.ndjson"
+  ],
+  "relayEventCount": 109,
+  "sessionOptionsSummary": {
+    "additionalDirectories": null,
+    "agent": "",
+    "allowedTools": null,
+    "bare": true,
+    "betas": "",
+    "chrome": null,
+    "cwd": "",
+    "dangerouslySkipPermissions": true,
+    "debug": null,
+    "debugFile": "",
+    "disableSlashCommands": false,
+    "disallowedTools": null,
+    "effort": "",
+    "excludeDynamicSystemPromptSections": false,
+    "fallbackModel": "",
+    "includeHookEvents": false,
+    "includePartialMessages": true,
+    "maxBudgetUsd": null,
+    "maxTurns": null,
+    "mcpConfig": null,
+    "model": "sonnet",
+    "name": "",
+    "noSessionPersistence": false,
+    "permissionMode": "",
+    "pluginDir": null,
+    "settingSources": "",
+    "settings": "",
+    "strictMcpConfig": false,
+    "tools": "",
+    "verbose": true,
+    "worktree": ""
+  }
+}

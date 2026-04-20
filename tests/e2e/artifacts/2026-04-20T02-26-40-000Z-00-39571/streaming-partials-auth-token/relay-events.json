@@ -1,0 +1,750 @@
+[
+  {
+    "model": "claude-sonnet-4-6",
+    "type": "session_meta"
+  },
+  {
+    "content": "The",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " user",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " wants",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " me",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " to",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " count",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " from",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "1",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " to",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "8",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " in",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " one",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " sentence",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " streamed",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " naturally",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " This",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " is",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " a",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " simple",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " creative",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " writing",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " task",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " -",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " no",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " tools",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " needed",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " I",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " should",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " write",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " a",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " single",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " flowing",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " sentence",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " that",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " incorporates",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " numbers",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "1",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " through",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "8",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " in",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " order",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".\n\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "Examples",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " of",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " natural",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " streaming",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ":\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "-",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " \"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "I",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " woke",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " up",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " at",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "1",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " in",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " morning",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " had",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "2",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " cups",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " of",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " coffee",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " walked",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "3",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " blocks",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " met",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "4",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " friends",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ordered",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "5",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " pizzas",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " stayed",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " for",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "6",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " hours",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " took",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "7",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " photos",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " and",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " felt",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " like",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " an",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "8",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "-year",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "-old",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " again",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".\"\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "-",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " Something",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " similarly",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " narrative",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " and",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " flowing",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".\n\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "Let",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " me",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " craft",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " something",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " natural",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "When",
+    "type": "text_delta"
+  },
+  {
+    "content": " I",
+    "type": "text_delta"
+  },
+  {
+    "content": " packed",
+    "type": "text_delta"
+  },
+  {
+    "content": " for",
+    "type": "text_delta"
+  },
+  {
+    "content": " the",
+    "type": "text_delta"
+  },
+  {
+    "content": " trip",
+    "type": "text_delta"
+  },
+  {
+    "content": ",",
+    "type": "text_delta"
+  },
+  {
+    "content": " I",
+    "type": "text_delta"
+  },
+  {
+    "content": " brought",
+    "type": "text_delta"
+  },
+  {
+    "content": " ",
+    "type": "text_delta"
+  },
+  {
+    "content": "1",
+    "type": "text_delta"
+  },
+  {
+    "content": " camera",
+    "type": "text_delta"
+  },
+  {
+    "content": ",",
+    "type": "text_delta"
+  },
+  {
+    "content": " ",
+    "type": "text_delta"
+  },
+  {
+    "content": "2",
+    "type": "text_delta"
+  },
+  {
+    "content": " pairs",
+    "type": "text_delta"
+  },
+  {
+    "content": " of",
+    "type": "text_delta"
+  },
+  {
+    "content": " shoes",
+    "type": "text_delta"
+  },
+  {
+    "content": ",",
+    "type": "text_delta"
+  },
+  {
+    "content": " ",
+    "type": "text_delta"
+  },
+  {
+    "content": "3",
+    "type": "text_delta"
+  },
+  {
+    "content": " books",
+    "type": "text_delta"
+  },
+  {
+    "content": ",",
+    "type": "text_delta"
+  },
+  {
+    "content": " ",
+    "type": "text_delta"
+  },
+  {
+    "content": "4",
+    "type": "text_delta"
+  },
+  {
+    "content": " snacks",
+    "type": "text_delta"
+  },
+  {
+    "content": ",",
+    "type": "text_delta"
+  },
+  {
+    "content": " ",
+    "type": "text_delta"
+  },
+  {
+    "content": "5",
+    "type": "text_delta"
+  },
+  {
+    "content": " changes",
+    "type": "text_delta"
+  },
+  {
+    "content": " of",
+    "type": "text_delta"
+  },
+  {
+    "content": " clothes",
+    "type": "text_delta"
+  },
+  {
+    "content": ",",
+    "type": "text_delta"
+  },
+  {
+    "content": " ",
+    "type": "text_delta"
+  },
+  {
+    "content": "6",
+    "type": "text_delta"
+  },
+  {
+    "content": " souvenirs",
+    "type": "text_delta"
+  },
+  {
+    "content": " for",
+    "type": "text_delta"
+  },
+  {
+    "content": " friends",
+    "type": "text_delta"
+  },
+  {
+    "content": ",",
+    "type": "text_delta"
+  },
+  {
+    "content": " ",
+    "type": "text_delta"
+  },
+  {
+    "content": "7",
+    "type": "text_delta"
+  },
+  {
+    "content": " playlists",
+    "type": "text_delta"
+  },
+  {
+    "content": ",",
+    "type": "text_delta"
+  },
+  {
+    "content": " and",
+    "type": "text_delta"
+  },
+  {
+    "content": " arrived",
+    "type": "text_delta"
+  },
+  {
+    "content": " with",
+    "type": "text_delta"
+  },
+  {
+    "content": " the",
+    "type": "text_delta"
+  },
+  {
+    "content": " energy",
+    "type": "text_delta"
+  },
+  {
+    "content": " of",
+    "type": "text_delta"
+  },
+  {
+    "content": " an",
+    "type": "text_delta"
+  },
+  {
+    "content": " ",
+    "type": "text_delta"
+  },
+  {
+    "content": "8",
+    "type": "text_delta"
+  },
+  {
+    "content": "-year",
+    "type": "text_delta"
+  },
+  {
+    "content": "-old",
+    "type": "text_delta"
+  },
+  {
+    "content": " on",
+    "type": "text_delta"
+  },
+  {
+    "content": " the",
+    "type": "text_delta"
+  },
+  {
+    "content": " first",
+    "type": "text_delta"
+  },
+  {
+    "content": " day",
+    "type": "text_delta"
+  },
+  {
+    "content": " of",
+    "type": "text_delta"
+  },
+  {
+    "content": " summer",
+    "type": "text_delta"
+  },
+  {
+    "content": ".",
+    "type": "text_delta"
+  },
+  {
+    "contextWindow": 200000,
+    "costUsd": 0.007665,
+    "inputTokens": 3924,
+    "outputTokens": 187,
+    "sessionId": "6302f8b7-8872-4efd-b4dc-b71e40d210e6",
+    "type": "turn_complete"
+  }
+]

@@ -1,0 +1,63 @@
+{
+  "artifactDir": "/Users/bytedance/Documents/ttls_repo/claude-code-go/tests/e2e/artifacts/2026-04-19T16-08-09-000Z-00-98079/auth-token-base-url",
+  "authMode": "auth-token",
+  "caseName": "auth-token-base-url",
+  "inputSummary": {
+    "items": [
+      {
+        "text": "Reply with strict JSON only: {\"auth_mode\":\"auth-token\",\"status\":\"ok\",\"short_answer\":\"\u003cone short sentence\u003e\"}. Do not use markdown.",
+        "type": "text"
+      }
+    ]
+  },
+  "metadata": {
+    "rawEventLogFiles": [
+      "claude-raw-events-2026-04-19T16-08-09-648Z-98079-lky8s9.ndjson"
+    ],
+    "sessionId": "b59cb846-789b-4ac6-88c6-d897255a216f",
+    "usage": {
+      "costUsd": 0.0042972,
+      "inputTokens": 3858,
+      "outputTokens": 160,
+      "contextWindow": 200000
+    }
+  },
+  "rawEventCount": 172,
+  "rawEventLogFiles": [
+    "claude-raw-events-2026-04-19T16-08-09-648Z-98079-lky8s9.ndjson"
+  ],
+  "relayEventCount": 159,
+  "sessionOptionsSummary": {
+    "additionalDirectories": null,
+    "agent": "",
+    "allowedTools": null,
+    "bare": true,
+    "betas": "",
+    "chrome": null,
+    "cwd": "",
+    "dangerouslySkipPermissions": true,
+    "debug": null,
+    "debugFile": "",
+    "disableSlashCommands": false,
+    "disallowedTools": null,
+    "effort": "",
+    "excludeDynamicSystemPromptSections": false,
+    "fallbackModel": "",
+    "includeHookEvents": false,
+    "includePartialMessages": true,
+    "maxBudgetUsd": null,
+    "maxTurns": null,
+    "mcpConfig": null,
+    "model": "sonnet",
+    "name": "",
+    "noSessionPersistence": false,
+    "permissionMode": "",
+    "pluginDir": null,
+    "settingSources": "",
+    "settings": "",
+    "strictMcpConfig": false,
+    "tools": "",
+    "verbose": true,
+    "worktree": ""
+  }
+}

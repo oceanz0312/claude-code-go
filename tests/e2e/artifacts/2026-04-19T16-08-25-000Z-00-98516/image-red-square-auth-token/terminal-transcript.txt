@@ -1,0 +1,9 @@
+[E2E] case=image-red-square-auth-token
+[E2E] auth_mode=auth-token
+[E2E] options={"additionalDirectories":null,"agent":"","allowedTools":null,"bare":true,"betas":"","chrome":null,"cwd":"","dangerouslySkipPermissions":true,"debug":null,"debugFile":"","disableSlashCommands":false,"disallowedTools":null,"effort":"","excludeDynamicSystemPromptSections":false,"fallbackModel":"","includeHookEvents":false,"includePartialMessages":true,"maxBudgetUsd":null,"maxTurns":null,"mcpConfig":null,"model":"sonnet","name":"","noSessionPersistence":false,"permissionMode":"","pluginDir":null,"settingSources":"","settings":"","strictMcpConfig":false,"tools":"","verbose":true,"worktree":""}
+[E2E] input={"items":[{"text":"Look at the image and reply with JSON only: {\"dominant_color\":\"\u003ccolor\u003e\",\"shape\":\"\u003cshape\u003e\",\"confidence\":\"\u003chigh|medium|low\u003e\"}","type":"text"},{"path":"/Users/bytedance/Documents/ttls_repo/claude-code-go/testdata/images/red-square.png","type":"local_image"}]}
+[E2E] raw_event_count=392
+[E2E] relay_event_count=379
+[E2E] raw_event_log_files=claude-raw-events-2026-04-19T16-26-44-049Z-98516-a2opd6.ndjson
+[E2E] final_response={"dominant_color":"red","shape":"square","confidence":"high"}
+[E2E] artifact_dir=/Users/bytedance/Documents/ttls_repo/claude-code-go/tests/e2e/artifacts/2026-04-19T16-08-25-000Z-00-98516/image-red-square-auth-token

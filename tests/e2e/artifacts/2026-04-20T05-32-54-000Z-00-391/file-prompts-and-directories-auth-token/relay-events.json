@@ -1,0 +1,1906 @@
+[
+  {
+    "model": "claude-sonnet-4-6",
+    "type": "session_meta"
+  },
+  {
+    "content": "The",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " user",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " wants",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " me",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " to",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " read",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " two",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " files",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " and",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " return",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " a",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " JSON",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " object",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " with",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " specific",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " fields",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " Let",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " me",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " read",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " both",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " files",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " in",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " parallel",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "input": "{\"file_path\":\"/var/folders/dt/nmb6r95s0j78rxvn4r92w1dm0000gn/T/agent-sdk-e2e-3151704853/cwd-probe.txt\"}",
+    "toolName": "Read",
+    "toolUseId": "tool_aX1T5xEcisdO73hXAfMSbRWq",
+    "type": "tool_use"
+  },
+  {
+    "isError": false,
+    "output": "1\tCWD_PROBE_TOKEN\n2\t",
+    "toolUseId": "tool_aX1T5xEcisdO73hXAfMSbRWq",
+    "type": "tool_result"
+  },
+  {
+    "input": "{\"file_path\":\"/var/folders/dt/nmb6r95s0j78rxvn4r92w1dm0000gn/T/agent-sdk-e2e-extra-2788469438/additional-probe.txt\"}",
+    "toolName": "Read",
+    "toolUseId": "tool_RqSnUdJXjegBGt6XfaRVr3Zu",
+    "type": "tool_use"
+  },
+  {
+    "isError": false,
+    "output": "1\tADDITIONAL_PROBE_TOKEN\n2\t",
+    "toolUseId": "tool_RqSnUdJXjegBGt6XfaRVr3Zu",
+    "type": "tool_result"
+  },
+  {
+    "content": "The",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " user",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " wants",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " a",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " JSON",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " object",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " containing",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ":\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "-",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " cwd",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_token",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ":",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " from",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " cwd",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "-pro",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "be",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".txt",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " →",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " \"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "C",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "WD",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_PROBE",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_TOKEN",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\"\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "-",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " additional",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_token",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ":",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " from",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " additional",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "-pro",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "be",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".txt",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " →",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " \"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "ADD",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "ITION",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "AL",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_PROBE",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_TOKEN",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\"\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "-",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " system",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_tag",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ":",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " \"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "FILE",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_TAG",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_G",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "AMMA",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\"\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "-",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " append",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_tag",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ":",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " \"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "APP",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "END",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_FILE",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_TAG",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_DELTA",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\"\n\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "The",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " user",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " also",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " said",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ":",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " \"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "Always",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " include",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " FILE",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_TAG",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_G",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "AMMA",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " in",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " your",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " final",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " answer",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " Also",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " include",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " APP",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "END",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_FILE",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_TAG",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_DELTA",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " in",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " your",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " final",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " answer",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".\"\n\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "So",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " I",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " need",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " to",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " include",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " both",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " tags",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " in",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " my",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " response",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " and",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " JSON",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " should",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " contain",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " these",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " values",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " I'll",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " format",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " response",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " with",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " JSON",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " and",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " make",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " sure",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " both",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " tags",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " are",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " present",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".\n\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "Wait",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " looking",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " carefully",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " at",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " instructions",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ":",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " \"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "Always",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " include",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " FILE",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_TAG",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_G",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "AMMA",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " in",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " your",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " final",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " answer",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " Also",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " include",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " APP",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "END",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_FILE",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_TAG",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_DELTA",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " in",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " your",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " final",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " answer",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".\"\n\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "This",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " is",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " a",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " bit",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ambiguous",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " It",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " could",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " mean",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ":\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "1",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " Include",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " literal",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " strings",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " FILE",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_TAG",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_G",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "AMMA",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " and",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " APP",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "END",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_FILE",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_TAG",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_DELTA",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " somewhere",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " in",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " final",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " answer",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " text",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "2",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " Or",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " it",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " could",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " be",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " referring",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " to",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " variables",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "/",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "values",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " to",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " include",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " in",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " JSON",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\n\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "Given",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " context",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " user",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " wants",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " JSON",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " object",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " with",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " fields",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " `",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "system",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_tag",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "`",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " and",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " `",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "append",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_tag",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "`",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " set",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " to",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " these",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " values",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " But",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " system",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " says",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " to",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " always",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " include",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " these",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " in",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " final",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " answer",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " I'll",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " include",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " them",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " in",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " JSON",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " values",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " and",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " also",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " make",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " sure",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " literal",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " strings",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " appear",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " in",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " response",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " (",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "which",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " they",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " will",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " as",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " part",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " of",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " JSON",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ").\n\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "Actually",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " looking",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " at",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " exact",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " wording",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ":",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " \"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "Reply",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " with",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " one",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " JSON",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " object",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " containing",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " cwd",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_token",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " additional",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_token",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " system",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_tag",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " and",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " append",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_tag",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".\"\n\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "So",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " JSON",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " should",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " be",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ":\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "{\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " \"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "cwd",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_token",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\":",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " \"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "C",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "WD",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_PROBE",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_TOKEN",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\",\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " \"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "additional",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_token",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\":",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " \"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "ADD",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "ITION",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "AL",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_PROBE",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_TOKEN",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\",\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " \"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "system",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_tag",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\":",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " \"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "FILE",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_TAG",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_G",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "AMMA",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\",\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " \"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "append",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_tag",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\":",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " \"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "APP",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "END",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_FILE",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_TAG",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_DELTA",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\"\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "}\n\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "And",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " since",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " system",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " instruction",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " says",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " to",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " always",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " include",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " FILE",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_TAG",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_G",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "AMMA",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " and",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " APP",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "END",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_FILE",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_TAG",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_DELTA",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " in",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " final",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " answer",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " having",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " them",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " as",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " values",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " in",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " JSON",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " satisfies",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " that",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "```",
+    "type": "text_delta"
+  },
+  {
+    "content": "json",
+    "type": "text_delta"
+  },
+  {
+    "content": "\n",
+    "type": "text_delta"
+  },
+  {
+    "content": "{\n",
+    "type": "text_delta"
+  },
+  {
+    "content": " ",
+    "type": "text_delta"
+  },
+  {
+    "content": " \"",
+    "type": "text_delta"
+  },
+  {
+    "content": "cwd",
+    "type": "text_delta"
+  },
+  {
+    "content": "_token",
+    "type": "text_delta"
+  },
+  {
+    "content": "\":",
+    "type": "text_delta"
+  },
+  {
+    "content": " \"",
+    "type": "text_delta"
+  },
+  {
+    "content": "C",
+    "type": "text_delta"
+  },
+  {
+    "content": "WD",
+    "type": "text_delta"
+  },
+  {
+    "content": "_PROBE",
+    "type": "text_delta"
+  },
+  {
+    "content": "_TOKEN",
+    "type": "text_delta"
+  },
+  {
+    "content": "\",\n",
+    "type": "text_delta"
+  },
+  {
+    "content": " ",
+    "type": "text_delta"
+  },
+  {
+    "content": " \"",
+    "type": "text_delta"
+  },
+  {
+    "content": "additional",
+    "type": "text_delta"
+  },
+  {
+    "content": "_token",
+    "type": "text_delta"
+  },
+  {
+    "content": "\":",
+    "type": "text_delta"
+  },
+  {
+    "content": " \"",
+    "type": "text_delta"
+  },
+  {
+    "content": "ADD",
+    "type": "text_delta"
+  },
+  {
+    "content": "ITION",
+    "type": "text_delta"
+  },
+  {
+    "content": "AL",
+    "type": "text_delta"
+  },
+  {
+    "content": "_PROBE",
+    "type": "text_delta"
+  },
+  {
+    "content": "_TOKEN",
+    "type": "text_delta"
+  },
+  {
+    "content": "\",\n",
+    "type": "text_delta"
+  },
+  {
+    "content": " ",
+    "type": "text_delta"
+  },
+  {
+    "content": " \"",
+    "type": "text_delta"
+  },
+  {
+    "content": "system",
+    "type": "text_delta"
+  },
+  {
+    "content": "_tag",
+    "type": "text_delta"
+  },
+  {
+    "content": "\":",
+    "type": "text_delta"
+  },
+  {
+    "content": " \"",
+    "type": "text_delta"
+  },
+  {
+    "content": "FILE",
+    "type": "text_delta"
+  },
+  {
+    "content": "_TAG",
+    "type": "text_delta"
+  },
+  {
+    "content": "_G",
+    "type": "text_delta"
+  },
+  {
+    "content": "AMMA",
+    "type": "text_delta"
+  },
+  {
+    "content": "\",\n",
+    "type": "text_delta"
+  },
+  {
+    "content": " ",
+    "type": "text_delta"
+  },
+  {
+    "content": " \"",
+    "type": "text_delta"
+  },
+  {
+    "content": "append",
+    "type": "text_delta"
+  },
+  {
+    "content": "_tag",
+    "type": "text_delta"
+  },
+  {
+    "content": "\":",
+    "type": "text_delta"
+  },
+  {
+    "content": " \"",
+    "type": "text_delta"
+  },
+  {
+    "content": "APP",
+    "type": "text_delta"
+  },
+  {
+    "content": "END",
+    "type": "text_delta"
+  },
+  {
+    "content": "_FILE",
+    "type": "text_delta"
+  },
+  {
+    "content": "_TAG",
+    "type": "text_delta"
+  },
+  {
+    "content": "_DELTA",
+    "type": "text_delta"
+  },
+  {
+    "content": "\"\n",
+    "type": "text_delta"
+  },
+  {
+    "content": "}\n",
+    "type": "text_delta"
+  },
+  {
+    "content": "```",
+    "type": "text_delta"
+  },
+  {
+    "contextWindow": 200000,
+    "costUsd": 0.0127764,
+    "inputTokens": 7795,
+    "outputTokens": 583,
+    "sessionId": "44bf772a-2de5-4014-b204-bee58810925d",
+    "type": "turn_complete"
+  }
+]

@@ -1,0 +1,67 @@
+{
+  "artifactDir": "/Users/bytedance/Documents/ttls_repo/claude-code-go/tests/e2e/artifacts/2026-04-20T05-32-54-000Z-00-391/image-receipt-auth-token",
+  "authMode": "auth-token",
+  "caseName": "image-receipt-auth-token",
+  "inputSummary": {
+    "items": [
+      {
+        "text": "Extract one clearly visible short text snippet from the image. Reply with JSON only: {\"snippet\":\"\u003ctext\u003e\"}",
+        "type": "text"
+      },
+      {
+        "path": "/Users/bytedance/Documents/ttls_repo/claude-code-go/testdata/images/receipt-demo.png",
+        "type": "local_image"
+      }
+    ]
+  },
+  "metadata": {
+    "rawEventLogFiles": [
+      "claude-raw-events-2026-04-20T05-33-35-197Z-391-rw55q9.ndjson"
+    ],
+    "sessionId": "4a2997f0-037b-413b-926e-0726beaa4f02",
+    "usage": {
+      "costUsd": 0.005706,
+      "inputTokens": 4133,
+      "outputTokens": 245,
+      "contextWindow": 200000
+    }
+  },
+  "rawEventCount": 257,
+  "rawEventLogFiles": [
+    "claude-raw-events-2026-04-20T05-33-35-197Z-391-rw55q9.ndjson"
+  ],
+  "relayEventCount": 244,
+  "sessionOptionsSummary": {
+    "additionalDirectories": null,
+    "agent": "",
+    "allowedTools": null,
+    "bare": true,
+    "betas": "",
+    "chrome": null,
+    "cwd": "",
+    "dangerouslySkipPermissions": true,
+    "debug": null,
+    "debugFile": "",
+    "disableSlashCommands": false,
+    "disallowedTools": null,
+    "effort": "",
+    "excludeDynamicSystemPromptSections": false,
+    "fallbackModel": "",
+    "includeHookEvents": false,
+    "includePartialMessages": true,
+    "maxBudgetUsd": null,
+    "maxTurns": null,
+    "mcpConfig": null,
+    "model": "sonnet",
+    "name": "",
+    "noSessionPersistence": false,
+    "permissionMode": "",
+    "pluginDir": null,
+    "settingSources": "",
+    "settings": "",
+    "strictMcpConfig": false,
+    "tools": "",
+    "verbose": true,
+    "worktree": ""
+  }
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "model": "claude-sonnet-4-6",
+    "type": "session_meta"
+  },
+  {
+    "content": "The user wants me to count from 1 to 8 in one sentence. This is a simple request that doesn't require any tools. I should just provide the numbers from 1 to 8 in a single sentence.\n\nExample: \"I will count from 1 to 8: one, two, three, four, five, six, seven, eight.\"\n\nOr simply: \"One, two, three, four, five, six, seven, eight.\"\n\nEither works. I'll provide a natural sentence.",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "One, two, three, four, five, six, seven, eight.",
+    "type": "text_delta"
+  },
+  {
+    "contextWindow": 200000,
+    "costUsd": 0.003288,
+    "inputTokens": 3947,
+    "outputTokens": 121,
+    "sessionId": "1d635c74-c0ca-42d8-80ac-4baf27a440e5",
+    "type": "turn_complete"
+  }
+]

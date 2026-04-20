@@ -1,0 +1,12 @@
+{
+  "items": [
+    {
+      "text": "Extract one clearly visible short text snippet from the image. Reply with JSON only: {\"snippet\":\"\u003ctext\u003e\"}",
+      "type": "text"
+    },
+    {
+      "path": "/Users/bytedance/Documents/ttls_repo/claude-code-go/testdata/images/receipt-demo.png",
+      "type": "local_image"
+    }
+  ]
+}

@@ -1,0 +1,1978 @@
+[
+  {
+    "model": "claude-sonnet-4-6",
+    "type": "session_meta"
+  },
+  {
+    "content": "The",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " user",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " wants",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " me",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " to",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " count",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " from",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "1",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " to",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "8",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " in",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " one",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " sentence",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " but",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " stream",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " it",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " naturally",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " This",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " is",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " a",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " simple",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " creative",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " writing",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " task",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " No",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " tools",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " needed",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".\n\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "I",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " need",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " to",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " construct",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " a",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " single",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " sentence",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " that",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " includes",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " numbers",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "1",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " through",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "8",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " in",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " order",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " but",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " make",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " it",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " sound",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " natural",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " and",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " flowing",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " (",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "not",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " just",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " \"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "1",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "2",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "3",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "4",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "5",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "6",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "7",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "8",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\")",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".\n\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "Examples",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ":\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "-",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " \"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "I",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " bought",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "1",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " apple",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "2",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " bananas",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "3",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " oranges",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "4",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " pears",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "5",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " grapes",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "6",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " k",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "iw",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "is",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "7",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " pl",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "ums",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " and",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "8",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " strawberries",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".\"\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "-",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " \"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "She",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " packed",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "1",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " shirt",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "2",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " pairs",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " of",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " shoes",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "3",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " books",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "4",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " snacks",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "5",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " water",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " bottles",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "6",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " chargers",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "7",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " photos",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " and",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "8",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " memories",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " for",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " trip",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".\"\n\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "Let",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " me",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " make",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " something",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " smooth",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " and",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " natural",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " Maybe",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " about",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " a",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " morning",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " routine",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " or",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " something",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " rel",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "atable",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".\n\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\"I",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " woke",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " up",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " at",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "1",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " AM",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " checked",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " my",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "2",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " phones",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " drank",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "3",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " cups",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " of",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " coffee",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " answered",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "4",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " emails",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " took",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "5",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " deep",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " breath",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "s",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " walked",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "6",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " blocks",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " met",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "7",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " friends",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " and",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " danced",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " until",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "8",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".\"\n\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "Or",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " perhaps",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " simpler",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ":\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "She",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " had",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "1",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " dream",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "2",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " hopes",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "3",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " wishes",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "4",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " fears",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "5",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " songs",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "6",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " stories",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "7",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " secrets",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " and",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "8",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " reasons",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " to",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " stay",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".\"\n\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "Let",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " me",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " go",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " with",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " something",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " everyday",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " and",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " conversational",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ":\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\"I",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " grabbed",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "1",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " coffee",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " added",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "2",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " sugars",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " walked",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "3",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " blocks",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " waited",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "4",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " minutes",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " boarded",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "5",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " train",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " read",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "6",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " pages",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " sent",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "7",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " texts",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " and",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " made",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "8",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " new",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " friends",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " by",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " noon",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".\"\n\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "Actually",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " let's",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " keep",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " it",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " tight",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " and",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " natural",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " Maybe",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ":\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\"I",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " need",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "1",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " minute",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "2",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " seconds",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "3",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " breath",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "s",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "4",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " looks",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "5",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " tries",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "6",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " steps",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "7",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " words",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " and",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "8",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " beats",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " of",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " silence",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " before",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " I",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " begin",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".\"\n\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "Or",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " very",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " naturally",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ":\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\"",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "She",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " packed",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "1",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " suitcase",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "2",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " hats",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "3",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " dresses",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "4",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " pairs",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " of",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " shoes",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "5",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " books",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "6",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " photographs",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "7",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " letters",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " and",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "8",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " hours",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " of",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " hope",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " for",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " her",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " journey",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " ahead",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".\"\n\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "I'll",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " go",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " with",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " something",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " simple",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " and",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " visual",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "I",
+    "type": "text_delta"
+  },
+  {
+    "content": " grabbed",
+    "type": "text_delta"
+  },
+  {
+    "content": " ",
+    "type": "text_delta"
+  },
+  {
+    "content": "1",
+    "type": "text_delta"
+  },
+  {
+    "content": " coffee",
+    "type": "text_delta"
+  },
+  {
+    "content": ",",
+    "type": "text_delta"
+  },
+  {
+    "content": " added",
+    "type": "text_delta"
+  },
+  {
+    "content": " ",
+    "type": "text_delta"
+  },
+  {
+    "content": "2",
+    "type": "text_delta"
+  },
+  {
+    "content": " sugars",
+    "type": "text_delta"
+  },
+  {
+    "content": ",",
+    "type": "text_delta"
+  },
+  {
+    "content": " walked",
+    "type": "text_delta"
+  },
+  {
+    "content": " ",
+    "type": "text_delta"
+  },
+  {
+    "content": "3",
+    "type": "text_delta"
+  },
+  {
+    "content": " blocks",
+    "type": "text_delta"
+  },
+  {
+    "content": ",",
+    "type": "text_delta"
+  },
+  {
+    "content": " waited",
+    "type": "text_delta"
+  },
+  {
+    "content": " ",
+    "type": "text_delta"
+  },
+  {
+    "content": "4",
+    "type": "text_delta"
+  },
+  {
+    "content": " minutes",
+    "type": "text_delta"
+  },
+  {
+    "content": ",",
+    "type": "text_delta"
+  },
+  {
+    "content": " h",
+    "type": "text_delta"
+  },
+  {
+    "content": "opped",
+    "type": "text_delta"
+  },
+  {
+    "content": " the",
+    "type": "text_delta"
+  },
+  {
+    "content": " ",
+    "type": "text_delta"
+  },
+  {
+    "content": "5",
+    "type": "text_delta"
+  },
+  {
+    "content": " train",
+    "type": "text_delta"
+  },
+  {
+    "content": ",",
+    "type": "text_delta"
+  },
+  {
+    "content": " read",
+    "type": "text_delta"
+  },
+  {
+    "content": " ",
+    "type": "text_delta"
+  },
+  {
+    "content": "6",
+    "type": "text_delta"
+  },
+  {
+    "content": " pages",
+    "type": "text_delta"
+  },
+  {
+    "content": ",",
+    "type": "text_delta"
+  },
+  {
+    "content": " sent",
+    "type": "text_delta"
+  },
+  {
+    "content": " ",
+    "type": "text_delta"
+  },
+  {
+    "content": "7",
+    "type": "text_delta"
+  },
+  {
+    "content": " texts",
+    "type": "text_delta"
+  },
+  {
+    "content": ",",
+    "type": "text_delta"
+  },
+  {
+    "content": " and",
+    "type": "text_delta"
+  },
+  {
+    "content": " made",
+    "type": "text_delta"
+  },
+  {
+    "content": " ",
+    "type": "text_delta"
+  },
+  {
+    "content": "8",
+    "type": "text_delta"
+  },
+  {
+    "content": " new",
+    "type": "text_delta"
+  },
+  {
+    "content": " friends",
+    "type": "text_delta"
+  },
+  {
+    "content": " by",
+    "type": "text_delta"
+  },
+  {
+    "content": " noon",
+    "type": "text_delta"
+  },
+  {
+    "content": ".",
+    "type": "text_delta"
+  },
+  {
+    "contextWindow": 200000,
+    "costUsd": 0.0095862,
+    "inputTokens": 3951,
+    "outputTokens": 494,
+    "sessionId": "db4f8348-d7d9-4142-81f2-63948fe039a6",
+    "type": "turn_complete"
+  }
+]

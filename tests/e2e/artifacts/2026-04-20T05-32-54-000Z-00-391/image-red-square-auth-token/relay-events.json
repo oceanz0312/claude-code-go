@@ -1,0 +1,458 @@
+[
+  {
+    "model": "claude-sonnet-4-6",
+    "type": "session_meta"
+  },
+  {
+    "content": "The",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " user",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " wants",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " me",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " to",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " look",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " at",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " an",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " image",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " and",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " reply",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " with",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " JSON",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " only",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " containing",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " dominant",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "_color",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " shape",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " and",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " confidence",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".\n\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "Looking",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " at",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " image",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " it",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " appears",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " to",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " be",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " a",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " solid",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " red",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "/or",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "ange",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " square",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " Let",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " me",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " analyze",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ":\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "-",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " Domin",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "ant",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " color",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ":",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " It",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " looks",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " like",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " red",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " or",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " orange",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "-red",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "-",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " Shape",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ":",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " It's",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " a",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " square",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "-",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " Confidence",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ":",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " The",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " image",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " is",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " clear",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " and",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " simple",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ",",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " so",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " high",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " confidence",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "\n\n",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "The",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " image",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " appears",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " to",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " be",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " a",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " solid",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " red",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " square",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " Let",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " me",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " provide",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " the",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " JSON",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " response",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " as",
+    "type": "thinking_delta"
+  },
+  {
+    "content": " requested",
+    "type": "thinking_delta"
+  },
+  {
+    "content": ".",
+    "type": "thinking_delta"
+  },
+  {
+    "content": "{\"",
+    "type": "text_delta"
+  },
+  {
+    "content": "dom",
+    "type": "text_delta"
+  },
+  {
+    "content": "inant",
+    "type": "text_delta"
+  },
+  {
+    "content": "_color",
+    "type": "text_delta"
+  },
+  {
+    "content": "\":\"",
+    "type": "text_delta"
+  },
+  {
+    "content": "red",
+    "type": "text_delta"
+  },
+  {
+    "content": "\",\"",
+    "type": "text_delta"
+  },
+  {
+    "content": "shape",
+    "type": "text_delta"
+  },
+  {
+    "content": "\":\"",
+    "type": "text_delta"
+  },
+  {
+    "content": "square",
+    "type": "text_delta"
+  },
+  {
+    "content": "\",\"",
+    "type": "text_delta"
+  },
+  {
+    "content": "confidence",
+    "type": "text_delta"
+  },
+  {
+    "content": "\":\"",
+    "type": "text_delta"
+  },
+  {
+    "content": "high",
+    "type": "text_delta"
+  },
+  {
+    "content": "\"}",
+    "type": "text_delta"
+  },
+  {
+    "contextWindow": 200000,
+    "costUsd": 0.003255,
+    "inputTokens": 3971,
+    "outputTokens": 114,
+    "sessionId": "4e1a63ce-d789-46ed-804b-96815efeec85",
+    "type": "turn_complete"
+  }
+]

@@ -1,0 +1,62 @@
+{
+  "artifactDir": "/Users/bytedance/Documents/ttls_repo/claude-code-go/tests/e2e/artifacts/2026-04-20T05-32-54-000Z-00-391/spawn-args-auth-token",
+  "authMode": "auth-token",
+  "caseName": "spawn-args-auth-token",
+  "inputSummary": {
+    "prompt": "Reply with JSON only: {\"status\":\"ok\"}"
+  },
+  "metadata": {
+    "rawEventLogFiles": [
+      "claude-raw-events-2026-04-20T05-33-59-773Z-391-ma877m.ndjson"
+    ],
+    "sessionId": "8f9fffe1-7e01-4d82-89b6-8f839de897dc",
+    "usage": {
+      "costUsd": 0.0051329999999999995,
+      "inputTokens": 1491,
+      "outputTokens": 44,
+      "contextWindow": 200000
+    }
+  },
+  "rawEventCount": 58,
+  "rawEventLogFiles": [
+    "claude-raw-events-2026-04-20T05-33-59-773Z-391-ma877m.ndjson"
+  ],
+  "relayEventCount": 43,
+  "sessionOptionsSummary": {
+    "additionalDirectories": null,
+    "agent": "",
+    "allowedTools": [
+      "Read"
+    ],
+    "bare": true,
+    "betas": "beta-test",
+    "chrome": null,
+    "cwd": "",
+    "dangerouslySkipPermissions": true,
+    "debug": true,
+    "debugFile": "/var/folders/dt/nmb6r95s0j78rxvn4r92w1dm0000gn/T/agent-sdk-e2e-debug-4195479903/claude-debug.log",
+    "disableSlashCommands": true,
+    "disallowedTools": [
+      "Bash"
+    ],
+    "effort": "low",
+    "excludeDynamicSystemPromptSections": true,
+    "fallbackModel": "opus",
+    "includeHookEvents": true,
+    "includePartialMessages": true,
+    "maxBudgetUsd": 1,
+    "maxTurns": 2,
+    "mcpConfig": null,
+    "model": "sonnet",
+    "name": "e2e-spawn-args",
+    "noSessionPersistence": true,
+    "permissionMode": "dontAsk",
+    "pluginDir": "/var/folders/dt/nmb6r95s0j78rxvn4r92w1dm0000gn/T/agent-sdk-plugin-4207734699",
+    "settingSources": "",
+    "settings": "{\"env\":{\"E2E_SETTINGS_TAG\":\"SETTINGS_OK\"}}",
+    "strictMcpConfig": false,
+    "tools": "Read,Edit",
+    "verbose": true,
+    "worktree": ""
+  }
+}

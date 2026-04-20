@@ -1,0 +1,12 @@
+{
+  "items": [
+    {
+      "text": "Look at the image and reply with JSON only: {\"dominant_color\":\"\u003ccolor\u003e\",\"shape\":\"\u003cshape\u003e\",\"confidence\":\"\u003chigh|medium|low\u003e\"}",
+      "type": "text"
+    },
+    {
+      "path": "/Users/bytedance/Documents/ttls_repo/claude-code-go/testdata/images/red-square.png",
+      "type": "local_image"
+    }
+  ]
+}
