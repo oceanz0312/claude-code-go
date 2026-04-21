@@ -3,16 +3,75 @@
 [![Go](https://img.shields.io/badge/Go-1.26+-00ADD8?logo=go&logoColor=white)](https://go.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Zero Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)](go.mod)
-[![E2E Tests](https://img.shields.io/badge/E2E_tests-all_passed-brightgreen.svg)](#tested--reliable)
-[![TDD](https://img.shields.io/badge/built_with-TDD-orange.svg)](#pure-tdd-driven)
+[![E2E Tests](https://img.shields.io/badge/E2E_tests-all_passed-brightgreen.svg)](#测试结果)
+[![TDD](https://img.shields.io/badge/built_with-TDD-orange.svg)](#纯-tdd-驱动)
 
-> A **complete Go port of [claude-code-node](https://github.com/oceanz0312/claude-code-node)** — Go SDK for Claude Code CLI, **built entirely with TDD**, perfectly replicating every capability of the Claude Code CLI. Zero external dependencies, idiomatic Go API.
+> **[claude-code-node](https://github.com/oceanz0312/claude-code-node) 的完整 Go 复刻版本** — 封装 Claude Code CLI 的 Go SDK，**全程纯 TDD 驱动开发**，完美复原 Claude Code CLI 的每一项能力。零外部依赖，惯用 Go API。
 
-[中文文档](./README.zh-CN.md)
+[English](./README.en.md)
 
 ---
 
-## What You Get
+## 环境依赖（重要）
+
+本 SDK 底层依赖 [`@anthropic-ai/claude-code`](https://www.npmjs.com/package/@anthropic-ai/claude-code) 这个 npm 包，通过子进程调用其提供的 `claude` CLI 命令来与 Claude 交互。因此，运行时必须确保目标机器上安装了 **Node.js** 和 **Claude Code CLI**。
+
+### 前置条件
+
+- **Go** >= 1.26
+- **Node.js** >= 22 — Claude Code CLI 是一个 Node.js 应用，必须先安装 Node.js
+- **Claude Code CLI**（`@anthropic-ai/claude-code`）— `claude` 命令可在 `PATH` 中找到（或通过 `CLIPath` 显式指定路径）
+
+### 安装 Claude Code CLI
+
+如果你的部署环境尚未安装 Claude Code CLI，可以使用以下脚本自动安装：
+
+```bash
+#!/bin/bash
+# install_claude.sh — 自动安装 Node.js 和 Claude Code CLI
+
+set -e
+
+# 安装 Node.js（如果未安装）
+if ! command -v node &> /dev/null; then
+    echo "正在安装 Node.js..."
+    curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
+    apt-get install -y nodejs
+fi
+
+# 安装 Claude Code CLI（如果未安装）
+if ! command -v claude &> /dev/null; then
+    echo "正在安装 Claude Code CLI..."
+    npm install -g @anthropic-ai/claude-code
+fi
+
+echo "Claude Code CLI 已就绪: $(claude --version)"
+```
+
+> **提示**：如果不想依赖全局 `PATH`，也可以将 CLI 安装到固定路径，然后通过 `CLIPath` 指定：
+>
+> ```bash
+> mkdir -p /opt/claude-code && cd /opt/claude-code
+> npm init -y && npm install @anthropic-ai/claude-code
+> ```
+>
+> ```go
+> claude := claudecodego.NewClaudeCode(claudecodego.ClaudeCodeOptions{
+>     CLIPath: "/opt/claude-code/node_modules/.bin/claude",
+> })
+> ```
+
+---
+
+## 安装
+
+```bash
+go get github.com/oceanz0312/claude-code-go
+```
+
+---
+
+## 你能得到什么
 
 ```go
 package main
@@ -40,107 +99,47 @@ func main() {
 	}
 	fmt.Println(turn.FinalResponse)
 
-	// Multi-turn: just keep calling Run() — session resume is automatic
+	// 多轮对话：直接继续 Run() — 会话恢复是自动的
 	turn2, _ := session.Run(context.Background(), "Now add test coverage for edge cases")
 	fmt.Println(turn2.FinalResponse)
 }
 ```
 
-**No HTTP server, no protocol translation, no abstractions over abstractions.** Just a typed, idiomatic Go wrapper around the Claude Code CLI that handles the messy parts for you:
+**没有 HTTP 服务器，没有协议转换，没有过度抽象。** 只是对 Claude Code CLI 的类型化 Go 封装，替你处理繁琐的部分：
 
-| Capability | What it does |
-|------------|-------------|
-| **Session management** | Auto `--resume` across turns — you never touch session IDs |
-| **Streaming** | `StreamedTurn` with `Next()` iterator — 7 typed event kinds |
-| **35+ CLI options** | Every useful flag mapped to a typed field — `Model`, `SystemPrompt`, `AllowedTools`, `JSONSchema`, `MaxBudgetUSD`, `Agents`, `MCPConfig`... |
-| **Structured output** | Pass a JSON Schema, get parsed objects back in `turn.StructuredOutput` |
-| **Image input** | Send local images alongside text prompts via `InputItem` |
-| **Cancellation** | Cancel any turn with `context.Context` |
-| **FailFast** | Detect API errors in seconds, not minutes (critical for CI/CD) |
-| **Zero dependencies** | Pure standard library — no external modules |
-
----
-
-## Relationship to claude-code-node
-
-This project is a **complete Go port** of [claude-code-node](https://github.com/oceanz0312/claude-code-node) (TypeScript SDK), maintaining the same architecture and feature coverage:
-
-| Feature | claude-code-node (TS) | claude-code-go (Go) |
-|---------|----------------------|---------------------|
-| Session management & auto-resume | ✅ | ✅ |
-| Streaming (7 event types) | ✅ AsyncIterable | ✅ StreamedTurn.Next() |
-| 35+ CLI parameter coverage | ✅ | ✅ |
-| Dual-layer event system | ✅ | ✅ |
-| Stream deduplication | ✅ | ✅ |
-| Fake CLI simulator | ✅ fake-claude.mjs | ✅ fakeclaude (Go) |
-| E2E tests all passed | ✅ | ✅ |
-| Zero external dependencies | ❌ (Node.js) | ✅ Pure stdlib |
+| 能力 | 做了什么 |
+|------|----------|
+| **会话管理** | 跨轮次自动 `--resume` — 你永远不需要手动管理 session ID |
+| **流式输出** | `StreamedTurn` + `Next()` 迭代器，7 种类型化事件 |
+| **35+ CLI 选项** | 每个常用 flag 都有类型化字段 — `Model`、`SystemPrompt`、`AllowedTools`、`JSONSchema`、`MaxBudgetUSD`、`Agents`、`MCPConfig`… |
+| **结构化输出** | 传入 JSON Schema，从 `turn.StructuredOutput` 拿到解析后的对象 |
+| **图片输入** | 通过 `InputItem` 将本地图片与文本一起发送 |
+| **取消控制** | 用 `context.Context` 取消任意 turn |
+| **FailFast** | 秒级检测 API 错误，而非等待数分钟（CI/CD 场景关键能力） |
+| **零依赖** | 纯标准库，无任何外部模块 |
 
 ---
 
-## Pure TDD-Driven
+## 与 claude-code-node 的关系
 
-This entire SDK was **built from scratch using strict Test-Driven Development**. Every feature — from session lifecycle to streaming event translation — was implemented by writing tests first, then writing the minimal code to pass them. The result: a Go SDK that **perfectly replicates every capability of the Claude Code CLI**.
+本项目是 [claude-code-node](https://github.com/oceanz0312/claude-code-node)（TypeScript SDK）的**完整 Go 复刻**，保持了一致的架构设计和功能覆盖：
 
-### How it was built
-
-```
- ┌─────────────────────────────────────────────────────────────┐
- │                    TDD Development Cycle                     │
- │                                                              │
- │  1. Study claude-code-node behavior & CLI protocol           │
- │  2. Write Go test capturing the expected behavior            │
- │  3. Build Fake CLI simulator to reproduce CLI output          │
- │  4. Implement until test passes                              │
- │  5. Validate against real Claude Code CLI (E2E)              │
- │  6. Repeat for next capability                               │
- └─────────────────────────────────────────────────────────────┘
-```
-
-### Two-layer test architecture
-
-| Layer | What it tests | How |
-|-------|--------------|-----|
-| **Unit tests** (Fake CLI) | Every parsing path, event translation, session state machine, error handling, streaming dedup, CLI argument building | Go-based Fake CLI simulator (`testdata/fakeclaude/`) emulates the full `stream-json` protocol — **no real CLI or API key needed** |
-| **E2E tests** (Real CLI) | Actual Claude Code CLI compatibility — auth, streaming, images, system prompts, agent roles, multi-turn, 15+ CLI flags | Hits the real `claude` binary with real credentials, saves full artifacts for post-mortem |
-
-### Test results
-
-**All tests passed — unit and E2E.** This is not "it compiles and we hope it works." Every behavior was verified against the real CLI:
-
-| Metric | Detail |
-|--------|--------|
-| **Unit tests** | Comprehensive coverage via Fake CLI — tests run in < 1s with zero network calls |
-| **E2E tests** | 11 real-model test cases, **all passed** |
-| **Verified parity** | Every E2E scenario was cross-validated against claude-code-node to ensure identical behavior |
-| **Test artifacts** | Every E2E run saves NDJSON logs, relay events, terminal transcript, and final responses to `tests/e2e/artifacts/` |
-
-### What "perfectly replicates" means
-
-- **35+ CLI flags**: every flag that claude-code-node supports is mapped 1:1 in Go
-- **Dual-layer event system**: raw process events (spawn, stdout, stderr, exit) + semantic relay events (text delta, thinking, tool use, tool result, session meta, turn complete, error) — same architecture as the TS version
-- **Stream deduplication**: eliminates duplicate text fragments from CLI verbose mode, producing clean incremental deltas
-- **Session state machine**: auto-resume, continue, fork — identical lifecycle semantics
-- **Error detection**: FailFast API error detection parses stderr/stdout in real-time, same patterns as the TS implementation
+| 特性 | claude-code-node (TS) | claude-code-go (Go) |
+|------|----------------------|---------------------|
+| 会话管理 & 自动恢复 | ✅ | ✅ |
+| 流式输出（7 种事件） | ✅ AsyncIterable | ✅ StreamedTurn.Next() |
+| 35+ CLI 参数覆盖 | ✅ | ✅ |
+| 双层事件体系 | ✅ | ✅ |
+| 流式去重 | ✅ | ✅ |
+| Fake CLI 模拟器 | ✅ fake-claude.mjs | ✅ fakeclaude (Go) |
+| E2E 测试全通过 | ✅ | ✅ |
+| 零外部依赖 | ❌ (Node.js) | ✅ 纯标准库 |
 
 ---
 
-## Prerequisites
+## 快速上手
 
-- Go >= 1.26
-- Claude Code CLI installed and `claude` available on your `PATH` (or specify `CLIPath` explicitly)
-
-## Installation
-
-```bash
-go get github.com/oceanz0312/claude-code-go
-```
-
----
-
-## Quick Start
-
-### Buffered (Non-Streaming)
+### 缓冲模式（非流式）
 
 ```go
 claude := claudecodego.NewClaudeCode(claudecodego.ClaudeCodeOptions{
@@ -152,7 +151,7 @@ session := claude.StartSession(claudecodego.SessionOptions{
     DangerouslySkipPermissions: true,
 })
 
-turn, err := session.Run(context.Background(), "Explain the architecture of this project")
+turn, err := session.Run(context.Background(), "解释这个项目的架构")
 if err != nil {
     log.Fatal(err)
 }
@@ -162,10 +161,10 @@ fmt.Printf("Cost: $%.4f\n", turn.Usage.CostUSD)
 fmt.Printf("Session: %s\n", turn.SessionID)
 ```
 
-### Streaming
+### 流式输出
 
 ```go
-stream, err := session.RunStreamed(context.Background(), "Refactor the auth module")
+stream, err := session.RunStreamed(context.Background(), "重构 auth 模块")
 if err != nil {
     log.Fatal(err)
 }
@@ -183,17 +182,17 @@ for {
     case claudecodego.TextDeltaEvent:
         fmt.Print(e.Content)
     case claudecodego.ThinkingDeltaEvent:
-        fmt.Printf("[thinking] %s", e.Content)
+        fmt.Printf("[思考中] %s", e.Content)
     case claudecodego.ToolUseEvent:
-        fmt.Printf("\n> Tool: %s(%s)\n", e.ToolName, e.Input)
+        fmt.Printf("\n> 工具: %s(%s)\n", e.ToolName, e.Input)
     case claudecodego.ToolResultEvent:
-        fmt.Printf("> Result: %s\n", e.Output)
+        fmt.Printf("> 结果: %s\n", e.Output)
     case claudecodego.SessionMetaEvent:
-        fmt.Printf("[model: %s]\n", e.Model)
+        fmt.Printf("[模型: %s]\n", e.Model)
     case claudecodego.TurnCompleteEvent:
-        fmt.Printf("\n--- Turn complete (session: %s) ---\n", e.SessionID)
+        fmt.Printf("\n--- 轮次完成 (session: %s) ---\n", e.SessionID)
     case claudecodego.ErrorEvent:
-        fmt.Printf("ERROR: %s\n", e.Message)
+        fmt.Printf("错误: %s\n", e.Message)
     }
 }
 
@@ -202,86 +201,134 @@ if err := stream.Wait(); err != nil {
 }
 ```
 
-### Image Input
+### 图片输入
 
 ```go
 turn, err := session.Run(ctx, []claudecodego.InputItem{
-    {Type: claudecodego.InputTypeText, Text: "What's in this screenshot?"},
+    {Type: claudecodego.InputTypeText, Text: "这张截图里有什么？"},
     {Type: claudecodego.InputTypeLocalImage, Path: "/path/to/screenshot.png"},
 })
 ```
 
-### Multi-Turn Conversation
+### 多轮对话
 
 ```go
 session := claude.StartSession(sessionOptions)
 
-// Turn 1
-turn1, _ := session.Run(ctx, "What files handle authentication?")
+// 第 1 轮
+turn1, _ := session.Run(ctx, "哪些文件处理认证逻辑？")
 fmt.Println(turn1.FinalResponse)
 
-// Turn 2 — session resume is automatic
-turn2, _ := session.Run(ctx, "Refactor those files to use JWT")
+// 第 2 轮 — 会话恢复是自动的
+turn2, _ := session.Run(ctx, "把那些文件重构为 JWT 认证")
 fmt.Println(turn2.FinalResponse)
 
-// Turn 3
-turn3, _ := session.Run(ctx, "Now write tests for the new JWT auth")
+// 第 3 轮
+turn3, _ := session.Run(ctx, "为新的 JWT 认证编写测试")
 fmt.Println(turn3.FinalResponse)
 ```
 
-### Resume / Continue a Session
+### 恢复 / 继续会话
 
 ```go
-// Resume a specific session by ID
-session := claude.ResumeSession("session-id-from-before", sessionOptions)
-turn, _ := session.Run(ctx, "Continue where we left off")
+// 通过 ID 恢复特定会话
+session := claude.ResumeSession("之前的-session-id", sessionOptions)
+turn, _ := session.Run(ctx, "继续之前的工作")
 
-// Continue the most recent session
+// 继续最近的会话
 session := claude.ContinueSession(sessionOptions)
-turn, _ := session.Run(ctx, "What were we working on?")
+turn, _ := session.Run(ctx, "我们之前在做什么？")
 ```
 
-### Cancellation
+### 取消控制
 
 ```go
 ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
 defer cancel()
 
-turn, err := session.Run(ctx, "Do something that might take a while")
+turn, err := session.Run(ctx, "执行一个可能耗时的操作")
 if err != nil {
-    // context.DeadlineExceeded or context.Canceled
-    log.Printf("Cancelled: %v", err)
+    // context.DeadlineExceeded 或 context.Canceled
+    log.Printf("已取消: %v", err)
 }
 ```
 
-### Raw Event Logging
+### 原始事件日志
 
 ```go
+// 自动在 ./agent_logs/ 创建日志
 session := claude.StartSession(claudecodego.SessionOptions{
     Model:       "sonnet",
-    RawEventLog: true, // auto-creates logs in ./agent_logs/
+    RawEventLog: true,
 })
 
-// Or specify a directory
+// 或指定目录
 session := claude.StartSession(claudecodego.SessionOptions{
     Model:       "sonnet",
     RawEventLog: "/path/to/logs/",
 })
 ```
 
-### FailFast on API Errors
+### API 错误快速失败
 
 ```go
 turn, err := session.Run(ctx, "prompt", claudecodego.TurnOptions{
-    FailFastOnCLIAPIError: true, // detect auth/quota errors in seconds
+    FailFastOnCLIAPIError: true, // 秒级检测认证/配额错误
 })
 ```
 
 ---
 
-## API Reference
+## 纯 TDD 驱动
 
-### ClaudeCode (Client)
+整个 SDK **从零开始，全程采用严格的测试驱动开发（TDD）**。每一项功能——从会话生命周期到流式事件翻译——都是先写测试，再写最小实现代码使其通过。最终结果：一个**完美复原 Claude Code CLI 所有能力**的 Go SDK。
+
+### 开发流程
+
+```
+ ┌─────────────────────────────────────────────────────────────┐
+ │                    TDD 开发循环                               │
+ │                                                              │
+ │  1. 研究 claude-code-node 行为 & CLI 协议                      │
+ │  2. 编写 Go 测试，捕获期望行为                                   │
+ │  3. 构建 Fake CLI 模拟器，复现 CLI 输出                          │
+ │  4. 实现代码直到测试通过                                        │
+ │  5. 用真实 Claude Code CLI 验证（E2E）                          │
+ │  6. 重复，直到覆盖下一个能力                                     │
+ └─────────────────────────────────────────────────────────────┘
+```
+
+### 双层测试架构
+
+| 层级 | 测试什么 | 怎么测 |
+|------|---------|-------|
+| **单元测试**（Fake CLI） | 每条解析路径、事件翻译、会话状态机、错误处理、流式去重、CLI 参数构建 | Go 版 Fake CLI 模拟器（`testdata/fakeclaude/`）完整模拟 `stream-json` 协议——**无需真实 CLI 或 API Key** |
+| **E2E 测试**（真实 CLI） | 真实 Claude Code CLI 兼容性——认证、流式、图片、系统提示词、Agent 角色、多轮对话、15+ CLI 参数 | 调用真实 `claude` 二进制，使用真实凭据，保存完整产物供事后分析 |
+
+### 测试结果
+
+**所有测试全部通过——单元测试和 E2E。** 这不是"能编译就算成功"——每一个行为都经过真实 CLI 验证：
+
+| 指标 | 详情 |
+|------|------|
+| **单元测试** | 通过 Fake CLI 实现全面覆盖——测试在 < 1 秒内完成，零网络调用 |
+| **E2E 测试** | 11 个真实模型测试用例，**全部通过** |
+| **一致性验证** | 每个 E2E 场景均与 claude-code-node 交叉对比，确保行为完全一致 |
+| **测试产物** | 每次 E2E 运行保存 NDJSON 日志、中继事件、终端转录和最终响应到 `tests/e2e/artifacts/` |
+
+### "完美复原"意味着什么
+
+- **35+ CLI 参数**：claude-code-node 支持的每个参数，在 Go 中 1:1 映射
+- **双层事件体系**：原始进程事件（spawn, stdout, stderr, exit）+ 语义中继事件（text delta, thinking, tool use, tool result, session meta, turn complete, error）——与 TS 版本完全相同的架构
+- **流式去重**：消除 CLI verbose 模式产生的重复文本片段，生成干净的增量 delta
+- **会话状态机**：auto-resume、continue、fork——完全一致的生命周期语义
+- **错误检测**：FailFast API 错误检测实时解析 stderr/stdout，使用与 TS 实现相同的匹配模式
+
+---
+
+## API 参考
+
+### ClaudeCode（客户端）
 
 ```go
 func NewClaudeCode(options ClaudeCodeOptions) *ClaudeCode
@@ -292,13 +339,13 @@ func (c *ClaudeCode) ContinueSession(options SessionOptions) *Session
 
 ### ClaudeCodeOptions
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `CLIPath` | `string` | Path to `claude` binary (default: `"claude"`) |
-| `Env` | `map[string]string` | Additional environment variables |
-| `APIKey` | `string` | Sets `ANTHROPIC_API_KEY` |
-| `AuthToken` | `string` | Sets `ANTHROPIC_AUTH_TOKEN` |
-| `BaseURL` | `string` | Sets `ANTHROPIC_BASE_URL` |
+| 字段 | 类型 | 说明 |
+|------|------|------|
+| `CLIPath` | `string` | `claude` 二进制路径（默认：`"claude"`） |
+| `Env` | `map[string]string` | 额外环境变量 |
+| `APIKey` | `string` | 设置 `ANTHROPIC_API_KEY` |
+| `AuthToken` | `string` | 设置 `ANTHROPIC_AUTH_TOKEN` |
+| `BaseURL` | `string` | 设置 `ANTHROPIC_BASE_URL` |
 
 ### Session
 
@@ -310,53 +357,53 @@ func (s *Session) RunStreamed(ctx context.Context, input Input, options ...TurnO
 
 ### SessionOptions
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `Model` | `string` | Model name (e.g. `"sonnet"`, `"opus"`) |
-| `CWD` | `string` | Working directory for the CLI |
-| `AdditionalDirectories` | `[]string` | Extra directories to include |
-| `MaxTurns` | `*int` | Maximum agentic turns |
-| `MaxBudgetUSD` | `*float64` | Spending cap in USD |
-| `SystemPrompt` | `string` | Custom system prompt |
-| `SystemPromptFile` | `string` | System prompt from file |
-| `AppendSystemPrompt` | `string` | Appended to system prompt |
+| 字段 | 类型 | 说明 |
+|------|------|------|
+| `Model` | `string` | 模型名称（如 `"sonnet"`、`"opus"`） |
+| `CWD` | `string` | CLI 工作目录 |
+| `AdditionalDirectories` | `[]string` | 额外包含的目录 |
+| `MaxTurns` | `*int` | 最大 Agent 轮次 |
+| `MaxBudgetUSD` | `*float64` | 花费上限（美元） |
+| `SystemPrompt` | `string` | 自定义系统提示词 |
+| `SystemPromptFile` | `string` | 从文件读取系统提示词 |
+| `AppendSystemPrompt` | `string` | 追加到系统提示词 |
 | `PermissionMode` | `PermissionMode` | `default` / `acceptEdits` / `plan` / `auto` / `bypassPermissions` |
-| `DangerouslySkipPermissions` | `bool` | Skip all permission checks |
-| `AllowedTools` | `[]string` | Tool allowlist |
-| `DisallowedTools` | `[]string` | Tool denylist |
+| `DangerouslySkipPermissions` | `bool` | 跳过所有权限检查 |
+| `AllowedTools` | `[]string` | 工具白名单 |
+| `DisallowedTools` | `[]string` | 工具黑名单 |
 | `Effort` | `Effort` | `low` / `medium` / `high` / `xhigh` / `max` |
-| `MCPConfig` | `any` | MCP server configuration |
-| `Agents` | `any` | Multi-agent definitions |
-| `JSONSchema` | `any` | Structured output schema |
-| `RawEventLog` | `any` | `true` for auto-dir, or `string` path |
-| `Bare` | `bool` | Minimal mode (no CLAUDE.md) |
-| `NoSessionPersistence` | `bool` | Don't persist session |
-| `Verbose` | `*bool` | CLI verbose flag (default: `true`) |
-| `IncludePartialMessages` | `*bool` | Include partial messages (default: `true`) |
+| `MCPConfig` | `any` | MCP 服务器配置 |
+| `Agents` | `any` | 多 Agent 定义 |
+| `JSONSchema` | `any` | 结构化输出 Schema |
+| `RawEventLog` | `any` | `true` 自动创建目录，或指定 `string` 路径 |
+| `Bare` | `bool` | 精简模式（不加载 CLAUDE.md） |
+| `NoSessionPersistence` | `bool` | 不持久化会话 |
+| `Verbose` | `*bool` | CLI verbose 标志（默认：`true`） |
+| `IncludePartialMessages` | `*bool` | 包含部分消息（默认：`true`） |
 
-### Input
+### Input（输入）
 
-`Input` is `any` and accepts:
-- `string` — plain text prompt
-- `[]InputItem` — multi-modal input (text + images)
+`Input` 为 `any` 类型，接受：
+- `string` — 纯文本提示
+- `[]InputItem` — 多模态输入（文本 + 图片）
 
 ```go
 type InputItem struct {
-    Type InputItemType // InputTypeText or InputTypeLocalImage
-    Text string        // for text items
-    Path string        // for image items
+    Type InputItemType // InputTypeText 或 InputTypeLocalImage
+    Text string        // 文本项
+    Path string        // 图片项（本地路径）
 }
 ```
 
-### Turn (Buffered Result)
+### Turn（缓冲结果）
 
 ```go
 type Turn struct {
-    Events           []RelayEvent // all events from this turn
-    FinalResponse    string       // final text response
-    Usage            *TurnUsage   // cost and token info
-    SessionID        string       // session ID for resumption
-    StructuredOutput any          // parsed JSON schema output
+    Events           []RelayEvent // 本轮所有事件
+    FinalResponse    string       // 最终文本响应
+    Usage            *TurnUsage   // 费用与 Token 信息
+    SessionID        string       // 用于恢复的 Session ID
+    StructuredOutput any          // JSON Schema 解析后的结构化输出
 }
 
 type TurnUsage struct {
@@ -367,40 +414,40 @@ type TurnUsage struct {
 }
 ```
 
-### StreamedTurn
+### StreamedTurn（流式输出）
 
 ```go
 func (t *StreamedTurn) Next(ctx context.Context) (RelayEvent, bool, error)
 func (t *StreamedTurn) Wait() error
 ```
 
-### RelayEvent Types
+### RelayEvent 事件类型
 
-| Event Type | Fields | Description |
-|-----------|--------|-------------|
-| `TextDeltaEvent` | `Content` | Incremental text output |
-| `ThinkingDeltaEvent` | `Content` | Incremental thinking/reasoning |
-| `ToolUseEvent` | `ToolUseID`, `ToolName`, `Input` | Tool invocation |
-| `ToolResultEvent` | `ToolUseID`, `Output`, `IsError` | Tool result |
-| `SessionMetaEvent` | `Model` | Session metadata |
-| `TurnCompleteEvent` | `SessionID`, `CostUSD`, `InputTokens`, `OutputTokens` | Turn finished |
-| `ErrorEvent` | `Message`, `SessionID` | Error occurred |
+| 事件类型 | 字段 | 说明 |
+|---------|------|------|
+| `TextDeltaEvent` | `Content` | 增量文本输出 |
+| `ThinkingDeltaEvent` | `Content` | 增量思考/推理内容 |
+| `ToolUseEvent` | `ToolUseID`, `ToolName`, `Input` | 工具调用 |
+| `ToolResultEvent` | `ToolUseID`, `Output`, `IsError` | 工具返回结果 |
+| `SessionMetaEvent` | `Model` | 会话元信息 |
+| `TurnCompleteEvent` | `SessionID`, `CostUSD`, `InputTokens`, `OutputTokens` | 轮次结束 |
+| `ErrorEvent` | `Message`, `SessionID` | 发生错误 |
 
 ### TurnOptions
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `OnRawEvent` | `func(RawClaudeEvent)` | Callback for raw process events |
-| `FailFastOnCLIAPIError` | `bool` | Abort early on API errors |
-| `Signal` | `context.Context` | Additional cancellation context |
+| 字段 | 类型 | 说明 |
+|------|------|------|
+| `OnRawEvent` | `func(RawClaudeEvent)` | 原始进程事件回调 |
+| `FailFastOnCLIAPIError` | `bool` | API 错误时快速中止 |
+| `Signal` | `context.Context` | 额外取消上下文 |
 
 ---
 
-## Architecture
+## 架构
 
 ```
 ┌─────────────────────────────────────────────────┐
-│                   Your Go Code                   │
+│                   你的 Go 代码                    │
 │                                                  │
 │  ClaudeCode ──> Session ──> Run / RunStreamed     │
 └──────────────────────┬──────────────────────────┘
@@ -408,13 +455,13 @@ func (t *StreamedTurn) Wait() error
                        ▼
 ┌──────────────────────────────────────────────────┐
 │              ClaudeCodeExec                        │
-│  Spawns `claude` CLI with --output-format          │
-│  stream-json, wires stdin/stdout/stderr            │
+│  启动 `claude` CLI，使用 --output-format            │
+│  stream-json，连接 stdin/stdout/stderr             │
 └──────────────────────┬───────────────────────────┘
-                       │ stdout lines (NDJSON)
+                       │ stdout 行 (NDJSON)
                        ▼
 ┌──────────────────────────────────────────────────┐
-│              parser package                        │
+│              parser 包                             │
 │                                                    │
 │  ParseLine ──> ClaudeEvent ──> Translator          │
 │                                  │                 │
@@ -427,26 +474,26 @@ func (t *StreamedTurn) Wait() error
 
 ---
 
-## What It's NOT
+## 它不是什么
 
-- Not an HTTP API server
-- Not a multi-model gateway (it wraps Claude Code, period)
-- Not a replacement for the CLI (it drives it)
+- 不是 HTTP API 服务
+- 不是多模型网关（它封装的是 Claude Code，仅此而已）
+- 不是 CLI 的替代品（它驱动 CLI）
 
 ---
 
-## Development
+## 开发
 
 ```bash
-# Run tests (unit tests with fake CLI — no API key needed)
+# 运行测试（单元测试使用 Fake CLI，无需 API Key）
 go test ./...
 
-# Run E2E tests (requires real credentials)
+# 运行 E2E 测试（需要真实凭据）
 E2E_AUTH_TOKEN=your-token E2E_BASE_URL=https://... go test ./tests/ -run TestE2E -v
 ```
 
 ---
 
-## License
+## 许可证
 
 [MIT](LICENSE)
