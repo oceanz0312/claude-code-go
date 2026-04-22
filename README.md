@@ -81,7 +81,6 @@ import (
 	"fmt"
 	claudecodego "github.com/oceanz0312/claude-code-go"
 )
-
 func main() {
 	claude := claudecodego.NewClaudeCode(claudecodego.ClaudeCodeOptions{
 		APIKey: "sk-ant-...",
