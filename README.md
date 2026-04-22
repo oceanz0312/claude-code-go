@@ -1,10 +1,10 @@
 # claude-code-go
 
-[![Go](https://img.shields.io/badge/Go-1.26+-00ADD8?logo=go&logoColor=white)](https://go.dev/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Zero Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)](go.mod)
-[![E2E Tests](https://img.shields.io/badge/E2E_tests-all_passed-brightgreen.svg)](#测试结果)
-[![TDD](https://img.shields.io/badge/built_with-TDD-orange.svg)](#纯-tdd-驱动)
+[Go](https://go.dev/)
+[License: MIT](LICENSE)
+[Zero Dependencies](go.mod)
+[E2E Tests](#测试结果)
+[TDD](#纯-tdd-驱动)
 
 > **[claude-code-node](https://github.com/oceanz0312/claude-code-node) 的完整 Go 复刻版本** — 封装 Claude Code CLI 的 Go SDK，**全程纯 TDD 驱动开发**，完美复原 Claude Code CLI 的每一项能力。零外部依赖，惯用 Go API。
 
@@ -14,7 +14,7 @@
 
 ## 环境依赖（重要）
 
-本 SDK 底层依赖 [`@anthropic-ai/claude-code`](https://www.npmjs.com/package/@anthropic-ai/claude-code) 这个 npm 包，通过子进程调用其提供的 `claude` CLI 命令来与 Claude 交互。因此，运行时必须确保目标机器上安装了 **Node.js** 和 **Claude Code CLI**。
+本 SDK 底层依赖 `[@anthropic-ai/claude-code](https://www.npmjs.com/package/@anthropic-ai/claude-code)` 这个 npm 包，通过子进程调用其提供的 `claude` CLI 命令来与 Claude 交互。因此，运行时必须确保目标机器上安装了 **Node.js** 和 **Claude Code CLI**。
 
 ### 前置条件
 
@@ -79,7 +79,6 @@ package main
 import (
 	"context"
 	"fmt"
-
 	claudecodego "github.com/oceanz0312/claude-code-go"
 )
 
@@ -107,16 +106,18 @@ func main() {
 
 **没有 HTTP 服务器，没有协议转换，没有过度抽象。** 只是对 Claude Code CLI 的类型化 Go 封装，替你处理繁琐的部分：
 
-| 能力 | 做了什么 |
-|------|----------|
-| **会话管理** | 跨轮次自动 `--resume` — 你永远不需要手动管理 session ID |
-| **流式输出** | `StreamedTurn` + `Next()` 迭代器，7 种类型化事件 |
+
+| 能力             | 做了什么                                                                                                        |
+| -------------- | ----------------------------------------------------------------------------------------------------------- |
+| **会话管理**       | 跨轮次自动 `--resume` — 你永远不需要手动管理 session ID                                                                    |
+| **流式输出**       | `StreamedTurn` + `Next()` 迭代器，7 种类型化事件                                                                      |
 | **35+ CLI 选项** | 每个常用 flag 都有类型化字段 — `Model`、`SystemPrompt`、`AllowedTools`、`JSONSchema`、`MaxBudgetUSD`、`Agents`、`MCPConfig`… |
-| **结构化输出** | 传入 JSON Schema，从 `turn.StructuredOutput` 拿到解析后的对象 |
-| **图片输入** | 通过 `InputItem` 将本地图片与文本一起发送 |
-| **取消控制** | 用 `context.Context` 取消任意 turn |
-| **FailFast** | 秒级检测 API 错误，而非等待数分钟（CI/CD 场景关键能力） |
-| **零依赖** | 纯标准库，无任何外部模块 |
+| **结构化输出**      | 传入 JSON Schema，从 `turn.StructuredOutput` 拿到解析后的对象                                                           |
+| **图片输入**       | 通过 `InputItem` 将本地图片与文本一起发送                                                                                 |
+| **取消控制**       | 用 `context.Context` 取消任意 turn                                                                               |
+| **FailFast**   | 秒级检测 API 错误，而非等待数分钟（CI/CD 场景关键能力）                                                                           |
+| **零依赖**        | 纯标准库，无任何外部模块                                                                                                |
+
 
 ---
 
@@ -124,16 +125,18 @@ func main() {
 
 本项目是 [claude-code-node](https://github.com/oceanz0312/claude-code-node)（TypeScript SDK）的**完整 Go 复刻**，保持了一致的架构设计和功能覆盖：
 
-| 特性 | claude-code-node (TS) | claude-code-go (Go) |
-|------|----------------------|---------------------|
-| 会话管理 & 自动恢复 | ✅ | ✅ |
-| 流式输出（7 种事件） | ✅ AsyncIterable | ✅ StreamedTurn.Next() |
-| 35+ CLI 参数覆盖 | ✅ | ✅ |
-| 双层事件体系 | ✅ | ✅ |
-| 流式去重 | ✅ | ✅ |
-| Fake CLI 模拟器 | ✅ fake-claude.mjs | ✅ fakeclaude (Go) |
-| E2E 测试全通过 | ✅ | ✅ |
-| 零外部依赖 | ❌ (Node.js) | ✅ 纯标准库 |
+
+| 特性           | claude-code-node (TS) | claude-code-go (Go)   |
+| ------------ | --------------------- | --------------------- |
+| 会话管理 & 自动恢复  | ✅                     | ✅                     |
+| 流式输出（7 种事件）  | ✅ AsyncIterable       | ✅ StreamedTurn.Next() |
+| 35+ CLI 参数覆盖 | ✅                     | ✅                     |
+| 双层事件体系       | ✅                     | ✅                     |
+| 流式去重         | ✅                     | ✅                     |
+| Fake CLI 模拟器 | ✅ fake-claude.mjs     | ✅ fakeclaude (Go)     |
+| E2E 测试全通过    | ✅                     | ✅                     |
+| 零外部依赖        | ❌ (Node.js)           | ✅ 纯标准库                |
+
 
 ---
 
@@ -300,21 +303,25 @@ turn, err := session.Run(ctx, "prompt", claudecodego.TurnOptions{
 
 ### 双层测试架构
 
-| 层级 | 测试什么 | 怎么测 |
-|------|---------|-------|
-| **单元测试**（Fake CLI） | 每条解析路径、事件翻译、会话状态机、错误处理、流式去重、CLI 参数构建 | Go 版 Fake CLI 模拟器（`testdata/fakeclaude/`）完整模拟 `stream-json` 协议——**无需真实 CLI 或 API Key** |
-| **E2E 测试**（真实 CLI） | 真实 Claude Code CLI 兼容性——认证、流式、图片、系统提示词、Agent 角色、多轮对话、15+ CLI 参数 | 调用真实 `claude` 二进制，使用真实凭据，保存完整产物供事后分析 |
+
+| 层级                 | 测试什么                                                            | 怎么测                                                                                    |
+| ------------------ | --------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| **单元测试**（Fake CLI） | 每条解析路径、事件翻译、会话状态机、错误处理、流式去重、CLI 参数构建                            | Go 版 Fake CLI 模拟器（`testdata/fakeclaude/`）完整模拟 `stream-json` 协议——**无需真实 CLI 或 API Key** |
+| **E2E 测试**（真实 CLI） | 真实 Claude Code CLI 兼容性——认证、流式、图片、系统提示词、Agent 角色、多轮对话、15+ CLI 参数 | 调用真实 `claude` 二进制，使用真实凭据，保存完整产物供事后分析                                                   |
+
 
 ### 测试结果
 
 **所有测试全部通过——单元测试和 E2E。** 这不是"能编译就算成功"——每一个行为都经过真实 CLI 验证：
 
-| 指标 | 详情 |
-|------|------|
-| **单元测试** | 通过 Fake CLI 实现全面覆盖——测试在 < 1 秒内完成，零网络调用 |
-| **E2E 测试** | 11 个真实模型测试用例，**全部通过** |
-| **一致性验证** | 每个 E2E 场景均与 claude-code-node 交叉对比，确保行为完全一致 |
-| **测试产物** | 每次 E2E 运行保存 NDJSON 日志、中继事件、终端转录和最终响应到 `tests/e2e/artifacts/` |
+
+| 指标         | 详情                                                           |
+| ---------- | ------------------------------------------------------------ |
+| **单元测试**   | 通过 Fake CLI 实现全面覆盖——测试在 < 1 秒内完成，零网络调用                       |
+| **E2E 测试** | 11 个真实模型测试用例，**全部通过**                                        |
+| **一致性验证**  | 每个 E2E 场景均与 claude-code-node 交叉对比，确保行为完全一致                   |
+| **测试产物**   | 每次 E2E 运行保存 NDJSON 日志、中继事件、终端转录和最终响应到 `tests/e2e/artifacts/` |
+
 
 ### "完美复原"意味着什么
 
@@ -339,13 +346,15 @@ func (c *ClaudeCode) ContinueSession(options SessionOptions) *Session
 
 ### ClaudeCodeOptions
 
-| 字段 | 类型 | 说明 |
-|------|------|------|
-| `CLIPath` | `string` | `claude` 二进制路径（默认：`"claude"`） |
-| `Env` | `map[string]string` | 额外环境变量 |
-| `APIKey` | `string` | 设置 `ANTHROPIC_API_KEY` |
-| `AuthToken` | `string` | 设置 `ANTHROPIC_AUTH_TOKEN` |
-| `BaseURL` | `string` | 设置 `ANTHROPIC_BASE_URL` |
+
+| 字段          | 类型                  | 说明                            |
+| ----------- | ------------------- | ----------------------------- |
+| `CLIPath`   | `string`            | `claude` 二进制路径（默认：`"claude"`） |
+| `Env`       | `map[string]string` | 额外环境变量                        |
+| `APIKey`    | `string`            | 设置 `ANTHROPIC_API_KEY`        |
+| `AuthToken` | `string`            | 设置 `ANTHROPIC_AUTH_TOKEN`     |
+| `BaseURL`   | `string`            | 设置 `ANTHROPIC_BASE_URL`       |
+
 
 ### Session
 
@@ -357,33 +366,36 @@ func (s *Session) RunStreamed(ctx context.Context, input Input, options ...TurnO
 
 ### SessionOptions
 
-| 字段 | 类型 | 说明 |
-|------|------|------|
-| `Model` | `string` | 模型名称（如 `"sonnet"`、`"opus"`） |
-| `CWD` | `string` | CLI 工作目录 |
-| `AdditionalDirectories` | `[]string` | 额外包含的目录 |
-| `MaxTurns` | `*int` | 最大 Agent 轮次 |
-| `MaxBudgetUSD` | `*float64` | 花费上限（美元） |
-| `SystemPrompt` | `string` | 自定义系统提示词 |
-| `SystemPromptFile` | `string` | 从文件读取系统提示词 |
-| `AppendSystemPrompt` | `string` | 追加到系统提示词 |
-| `PermissionMode` | `PermissionMode` | `default` / `acceptEdits` / `plan` / `auto` / `bypassPermissions` |
-| `DangerouslySkipPermissions` | `bool` | 跳过所有权限检查 |
-| `AllowedTools` | `[]string` | 工具白名单 |
-| `DisallowedTools` | `[]string` | 工具黑名单 |
-| `Effort` | `Effort` | `low` / `medium` / `high` / `xhigh` / `max` |
-| `MCPConfig` | `any` | MCP 服务器配置 |
-| `Agents` | `any` | 多 Agent 定义 |
-| `JSONSchema` | `any` | 结构化输出 Schema |
-| `RawEventLog` | `any` | `true` 自动创建目录，或指定 `string` 路径 |
-| `Bare` | `bool` | 精简模式（不加载 CLAUDE.md） |
-| `NoSessionPersistence` | `bool` | 不持久化会话 |
-| `Verbose` | `*bool` | CLI verbose 标志（默认：`true`） |
-| `IncludePartialMessages` | `*bool` | 包含部分消息（默认：`true`） |
+
+| 字段                           | 类型               | 说明                                                                |
+| ---------------------------- | ---------------- | ----------------------------------------------------------------- |
+| `Model`                      | `string`         | 模型名称（如 `"sonnet"`、`"opus"`）                                       |
+| `CWD`                        | `string`         | CLI 工作目录                                                          |
+| `AdditionalDirectories`      | `[]string`       | 额外包含的目录                                                           |
+| `MaxTurns`                   | `*int`           | 最大 Agent 轮次                                                       |
+| `MaxBudgetUSD`               | `*float64`       | 花费上限（美元）                                                          |
+| `SystemPrompt`               | `string`         | 自定义系统提示词                                                          |
+| `SystemPromptFile`           | `string`         | 从文件读取系统提示词                                                        |
+| `AppendSystemPrompt`         | `string`         | 追加到系统提示词                                                          |
+| `PermissionMode`             | `PermissionMode` | `default` / `acceptEdits` / `plan` / `auto` / `bypassPermissions` |
+| `DangerouslySkipPermissions` | `bool`           | 跳过所有权限检查                                                          |
+| `AllowedTools`               | `[]string`       | 工具白名单                                                             |
+| `DisallowedTools`            | `[]string`       | 工具黑名单                                                             |
+| `Effort`                     | `Effort`         | `low` / `medium` / `high` / `xhigh` / `max`                       |
+| `MCPConfig`                  | `any`            | MCP 服务器配置                                                         |
+| `Agents`                     | `any`            | 多 Agent 定义                                                        |
+| `JSONSchema`                 | `any`            | 结构化输出 Schema                                                      |
+| `RawEventLog`                | `any`            | `true` 自动创建目录，或指定 `string` 路径                                     |
+| `Bare`                       | `bool`           | 精简模式（不加载 CLAUDE.md）                                               |
+| `NoSessionPersistence`       | `bool`           | 不持久化会话                                                            |
+| `Verbose`                    | `*bool`          | CLI verbose 标志（默认：`true`）                                         |
+| `IncludePartialMessages`     | `*bool`          | 包含部分消息（默认：`true`）                                                 |
+
 
 ### Input（输入）
 
 `Input` 为 `any` 类型，接受：
+
 - `string` — 纯文本提示
 - `[]InputItem` — 多模态输入（文本 + 图片）
 
@@ -423,23 +435,27 @@ func (t *StreamedTurn) Wait() error
 
 ### RelayEvent 事件类型
 
-| 事件类型 | 字段 | 说明 |
-|---------|------|------|
-| `TextDeltaEvent` | `Content` | 增量文本输出 |
-| `ThinkingDeltaEvent` | `Content` | 增量思考/推理内容 |
-| `ToolUseEvent` | `ToolUseID`, `ToolName`, `Input` | 工具调用 |
-| `ToolResultEvent` | `ToolUseID`, `Output`, `IsError` | 工具返回结果 |
-| `SessionMetaEvent` | `Model` | 会话元信息 |
-| `TurnCompleteEvent` | `SessionID`, `CostUSD`, `InputTokens`, `OutputTokens` | 轮次结束 |
-| `ErrorEvent` | `Message`, `SessionID` | 发生错误 |
+
+| 事件类型                 | 字段                                                    | 说明        |
+| -------------------- | ----------------------------------------------------- | --------- |
+| `TextDeltaEvent`     | `Content`                                             | 增量文本输出    |
+| `ThinkingDeltaEvent` | `Content`                                             | 增量思考/推理内容 |
+| `ToolUseEvent`       | `ToolUseID`, `ToolName`, `Input`                      | 工具调用      |
+| `ToolResultEvent`    | `ToolUseID`, `Output`, `IsError`                      | 工具返回结果    |
+| `SessionMetaEvent`   | `Model`                                               | 会话元信息     |
+| `TurnCompleteEvent`  | `SessionID`, `CostUSD`, `InputTokens`, `OutputTokens` | 轮次结束      |
+| `ErrorEvent`         | `Message`, `SessionID`                                | 发生错误      |
+
 
 ### TurnOptions
 
-| 字段 | 类型 | 说明 |
-|------|------|------|
-| `OnRawEvent` | `func(RawClaudeEvent)` | 原始进程事件回调 |
-| `FailFastOnCLIAPIError` | `bool` | API 错误时快速中止 |
-| `Signal` | `context.Context` | 额外取消上下文 |
+
+| 字段                      | 类型                     | 说明          |
+| ----------------------- | ---------------------- | ----------- |
+| `OnRawEvent`            | `func(RawClaudeEvent)` | 原始进程事件回调    |
+| `FailFastOnCLIAPIError` | `bool`                 | API 错误时快速中止 |
+| `Signal`                | `context.Context`      | 额外取消上下文     |
+
 
 ---
 
