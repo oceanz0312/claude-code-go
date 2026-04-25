@@ -1,0 +1,1064 @@
+# claude-code-go
+
+> Complete API documentation for AI agents. Package: `github.com/oceanz0312/claude-code-go`
+
+## Overview
+
+`claude-code-go` is a Go SDK that wraps the Claude Code CLI (`@anthropic-ai/claude-code`). It spawns the `claude` binary as a subprocess using `--output-format stream-json`, parses the NDJSON output into typed Go events, and manages session lifecycle automatically. Zero external dependencies -- pure Go standard library. The SDK provides both buffered and streaming modes, multi-turn conversation support, structured output via JSON Schema, image input, cancellation via `context.Context`, and fast-fail detection for API errors.
+
+## Installation
+
+```bash
+go get github.com/oceanz0312/claude-code-go
+```
+
+### Prerequisites
+
+- Go >= 1.26
+- Node.js >= 22 (Claude Code CLI is a Node.js application)
+- Claude Code CLI (`@anthropic-ai/claude-code`) -- the `claude` command must be in PATH or specified via `CLIPath`
+
+Install Claude Code CLI:
+```bash
+npm install -g @anthropic-ai/claude-code
+```
+
+## Core Concepts
+
+1. **ClaudeCode** (client): Created via `NewClaudeCode()`. Holds global options (API key, CLI path, env). Produces sessions.
+2. **Session**: Created via `StartSession()`, `ResumeSession()`, or `ContinueSession()`. Represents a conversation context. Automatically resumes across multiple `Run()` calls using the session ID.
+3. **Turn**: The result of a single `Run()` call. Contains all events, final text response, usage stats, and optional structured output.
+4. **StreamedTurn**: The result of `RunStreamed()`. Provides a channel-based iterator via `Next()` to consume events as they arrive.
+5. **RelayEvent**: The semantic event interface. 7 concrete types: `TextDeltaEvent`, `ThinkingDeltaEvent`, `ToolUseEvent`, `ToolResultEvent`, `SessionMetaEvent`, `TurnCompleteEvent`, `ErrorEvent`.
+6. **RawClaudeEvent**: Low-level process events (spawn, stdin_closed, stdout_line, stderr_chunk, stderr_line, process_error, exit).
+7. **Input**: Either a plain `string` or `[]InputItem` for multimodal input (text + local images).
+8. **parser package**: Sub-package `github.com/oceanz0312/claude-code-go/parser` handles NDJSON line parsing and event translation.
+
+---
+
+## Complete API Reference
+
+### Package `claudecodego`
+
+Import: `import claudecodego "github.com/oceanz0312/claude-code-go"`
+
+---
+
+### Type: ClaudeCode
+
+The main client. Wraps CLI execution and global configuration.
+
+```go
+type ClaudeCode struct {
+    // unexported fields
+}
+```
+
+#### func NewClaudeCode
+
+```go
+func NewClaudeCode(options ClaudeCodeOptions) *ClaudeCode
+```
+
+Creates a new client. Merges environment variables from options (APIKey -> ANTHROPIC_API_KEY, AuthToken -> ANTHROPIC_AUTH_TOKEN, BaseURL -> ANTHROPIC_BASE_URL).
+
+#### func (*ClaudeCode) StartSession
+
+```go
+func (client *ClaudeCode) StartSession(options SessionOptions) *Session
+```
+
+Creates a new session. The first `Run()` call starts a fresh conversation; subsequent calls auto-resume.
+
+#### func (*ClaudeCode) ResumeSession
+
+```go
+func (client *ClaudeCode) ResumeSession(sessionID string, options SessionOptions) *Session
+```
+
+Creates a session that resumes a specific previous session by ID.
+
+#### func (*ClaudeCode) ContinueSession
+
+```go
+func (client *ClaudeCode) ContinueSession(options SessionOptions) *Session
+```
+
+Creates a session that continues the most recent conversation (uses `--continue` flag).
+
+---
+
+### Type: ClaudeCodeOptions
+
+```go
+type ClaudeCodeOptions struct {
+    CLIPath   string            // Path to `claude` binary. Default: "claude"
+    Env       map[string]string // Extra environment variables for the CLI process
+    APIKey    string            // Sets ANTHROPIC_API_KEY env var
+    AuthToken string            // Sets ANTHROPIC_AUTH_TOKEN env var
+    BaseURL   string            // Sets ANTHROPIC_BASE_URL env var
+}
+```
+
+---
+
+### Type: Session
+
+Represents a conversation session. Tracks session ID and auto-resumes across turns.
+
+```go
+type Session struct {
+    // unexported fields
+}
+```
+
+#### func NewSession
+
+```go
+func NewSession(exec execRunner, globalOptions ClaudeCodeOptions, sessionOptions SessionOptions, sessionID string, continueMode bool) *Session
+```
+
+Low-level constructor. Typically use `ClaudeCode.StartSession()` etc. instead.
+
+#### func (*Session) ID
+
+```go
+func (session *Session) ID() string
+```
+
+Returns the current session ID (populated after the first `Run()` call).
+
+#### func (*Session) Run
+
+```go
+func (session *Session) Run(ctx context.Context, input Input, options ...TurnOptions) (*Turn, error)
+```
+
+Executes a single turn in buffered mode. Blocks until the CLI process completes. Returns the complete turn result with all events, final response text, usage, and structured output.
+
+Parameters:
+- `ctx`: Must not be nil. Used for cancellation/timeout.
+- `input`: Either `string` or `[]InputItem`.
+- `options`: Optional `TurnOptions` (at most one).
+
+Returns `(*Turn, error)`. Returns an error if the CLI process fails or if a stream error event is received.
+
+#### func (*Session) RunStreamed
+
+```go
+func (session *Session) RunStreamed(ctx context.Context, input Input, options ...TurnOptions) (*StreamedTurn, error)
+```
+
+Executes a single turn in streaming mode. Returns immediately with a `*StreamedTurn` that provides events as they arrive.
+
+Parameters: Same as `Run()`.
+
+Returns `(*StreamedTurn, error)`. The error is for setup failures only; stream errors are delivered via `Next()`.
+
+---
+
+### Type: SessionOptions
+
+All fields are optional. Controls CLI behavior for a session.
+
+```go
+type SessionOptions struct {
+    Model                              string         // Model name (e.g. "sonnet", "opus")
+    CWD                                string         // Working directory for the CLI process
+    AdditionalDirectories              []string       // Extra directories to include (--add-dir)
+    MaxTurns                           *int           // Max agent turns (--max-turns)
+    MaxBudgetUSD                       *float64       // Spending cap in USD (--max-budget-usd)
+    SystemPrompt                       string         // Custom system prompt (--system-prompt)
+    SystemPromptFile                   string         // System prompt from file (--system-prompt-file)
+    AppendSystemPrompt                 string         // Append to system prompt (--append-system-prompt)
+    AppendSystemPromptFile             string         // Append from file (--append-system-prompt-file)
+    PermissionMode                     PermissionMode // Permission mode (--permission-mode)
+    DangerouslySkipPermissions         bool           // Skip all permission checks (--dangerously-skip-permissions)
+    AllowedTools                       []string       // Tool allowlist (--allowedTools)
+    DisallowedTools                    []string       // Tool blocklist (--disallowedTools)
+    Tools                              string         // Tools flag (--tools)
+    PermissionPromptTool               string         // Permission prompt tool (--permission-prompt-tool)
+    MCPConfig                          any            // MCP server config; string or []string (--mcp-config)
+    StrictMCPConfig                    bool           // Strict MCP config (--strict-mcp-config)
+    Effort                             Effort         // Effort level (--effort)
+    FallbackModel                      string         // Fallback model (--fallback-model)
+    Bare                               bool           // Bare mode, skip CLAUDE.md (--bare)
+    NoSessionPersistence               bool           // Don't persist session (--no-session-persistence)
+    Chrome                             *bool          // Enable/disable Chrome; nil=default, true=--chrome, false=--no-chrome
+    Agents                             any            // Multi-agent definitions; map or JSON string (--agents)
+    Agent                              string         // Agent name (--agent)
+    Name                               string         // Session name (--name)
+    Settings                           string         // Settings file path (--settings)
+    SettingSources                     string         // Setting sources (--setting-sources)
+    Verbose                            *bool          // Verbose output; default true (--verbose)
+    IncludePartialMessages             *bool          // Include partial messages; default true (--include-partial-messages)
+    IncludeHookEvents                  bool           // Include hook events (--include-hook-events)
+    Betas                              string         // Beta features (--betas)
+    Worktree                           string         // Worktree path (--worktree)
+    DisableSlashCommands               bool           // Disable slash commands (--disable-slash-commands)
+    PluginDir                          any            // Plugin directory; string or []string (--plugin-dir)
+    ExcludeDynamicSystemPromptSections bool           // Exclude dynamic system prompt sections
+    Debug                              any            // Debug mode; bool or string (--debug)
+    DebugFile                          string         // Debug output file (--debug-file)
+    JSONSchema                         any            // JSON Schema for structured output (--json-schema)
+    SessionID                          string         // Explicit session ID (--session-id)
+    ForkSession                        bool           // Fork session (--fork-session)
+    RawEventLog                        any            // Raw event logging; true=auto dir, string=abs path
+}
+```
+
+---
+
+### Type: Input
+
+```go
+type Input = any
+```
+
+Accepts either:
+- `string` -- plain text prompt
+- `[]InputItem` -- multimodal input (text + images)
+
+---
+
+### Type: InputItem
+
+```go
+type InputItem struct {
+    Type InputItemType `json:"type"`           // InputTypeText or InputTypeLocalImage
+    Text string        `json:"text,omitempty"` // Text content (for InputTypeText)
+    Path string        `json:"path,omitempty"` // Local file path (for InputTypeLocalImage)
+}
+```
+
+---
+
+### Type: InputItemType
+
+```go
+type InputItemType string
+
+const (
+    InputTypeText       InputItemType = "text"
+    InputTypeLocalImage InputItemType = "local_image"
+)
+```
+
+---
+
+### Type: Turn
+
+Buffered result of a single conversation turn.
+
+```go
+type Turn struct {
+    Events           []parser.RelayEvent // All relay events from this turn
+    FinalResponse    string              // Concatenated text response
+    Usage            *TurnUsage          // Cost and token usage
+    SessionID        string              // Session ID for resuming
+    StructuredOutput any                 // Parsed structured output (if JSONSchema was set)
+}
+```
+
+---
+
+### Type: TurnUsage
+
+```go
+type TurnUsage struct {
+    CostUSD       float64 `json:"costUsd,omitempty"`       // Cost in USD
+    InputTokens   int     `json:"inputTokens,omitempty"`   // Input token count
+    OutputTokens  int     `json:"outputTokens,omitempty"`  // Output token count
+    ContextWindow int     `json:"contextWindow,omitempty"` // Context window size
+}
+```
+
+---
+
+### Type: TurnOptions
+
+Optional per-turn configuration. Pass as variadic argument to `Run()` / `RunStreamed()`.
+
+```go
+type TurnOptions struct {
+    OnRawEvent            func(RawClaudeEvent) // Callback for raw process events
+    FailFastOnCLIAPIError bool                 // Detect API errors quickly instead of waiting
+    Signal                context.Context      // Additional cancellation context
+}
+```
+
+---
+
+### Type: StreamedTurn
+
+Streaming result. Provides events via channel-based iteration.
+
+```go
+type StreamedTurn struct {
+    // unexported fields
+}
+```
+
+#### func (*StreamedTurn) Next
+
+```go
+func (turn *StreamedTurn) Next(ctx context.Context) (parser.RelayEvent, bool, error)
+```
+
+Returns the next event from the stream. The boolean is true if a valid event was returned. Returns `(nil, false, nil)` when the stream ends. Returns an error if the context is cancelled or the stream encountered an error.
+
+Usage pattern:
+```go
+for {
+    event, ok, err := stream.Next(ctx)
+    if err != nil { /* handle error */ }
+    if !ok { break }
+    // process event
+}
+```
+
+#### func (*StreamedTurn) Wait
+
+```go
+func (turn *StreamedTurn) Wait() error
+```
+
+Blocks until the stream completes. Returns any error that occurred during streaming.
+
+---
+
+### Type: PermissionMode
+
+```go
+type PermissionMode string
+
+const (
+    PermissionModeDefault           PermissionMode = "default"
+    PermissionModeAcceptEdits       PermissionMode = "acceptEdits"
+    PermissionModePlan              PermissionMode = "plan"
+    PermissionModeAuto              PermissionMode = "auto"
+    PermissionModeDontAsk           PermissionMode = "dontAsk"
+    PermissionModeBypassPermissions PermissionMode = "bypassPermissions"
+)
+```
+
+---
+
+### Type: Effort
+
+```go
+type Effort string
+
+const (
+    EffortLow    Effort = "low"
+    EffortMedium Effort = "medium"
+    EffortHigh   Effort = "high"
+    EffortXHigh  Effort = "xhigh"
+    EffortMax    Effort = "max"
+)
+```
+
+---
+
+### Type: AgentDefinition
+
+Used with the `Agents` field in `SessionOptions`.
+
+```go
+type AgentDefinition struct {
+    Description     string         `json:"description,omitempty"`
+    Prompt          string         `json:"prompt,omitempty"`
+    Tools           []string       `json:"tools,omitempty"`
+    AllowedTools    []string       `json:"allowedTools,omitempty"`
+    DisallowedTools []string       `json:"disallowedTools,omitempty"`
+    Model           string         `json:"model,omitempty"`
+    Effort          Effort         `json:"effort,omitempty"`
+    MaxTurns        *int           `json:"maxTurns,omitempty"`
+    PermissionMode  PermissionMode `json:"permissionMode,omitempty"`
+    Isolation       string         `json:"isolation,omitempty"`
+    InitialPrompt   string         `json:"initialPrompt,omitempty"`
+    MCPServers      map[string]any `json:"mcpServers,omitempty"`
+}
+```
+
+---
+
+### Type: RawClaudeEvent
+
+Low-level process event from the CLI subprocess.
+
+```go
+type RawClaudeEvent struct {
+    Type    RawClaudeEventType `json:"type"`
+    Command string             `json:"command,omitempty"` // CLI command (for spawn)
+    Args    []string           `json:"args,omitempty"`    // CLI args (for spawn)
+    CWD     string             `json:"cwd,omitempty"`     // Working directory (for spawn)
+    Chunk   string             `json:"chunk,omitempty"`   // Raw bytes (for stderr_chunk)
+    Line    string             `json:"line,omitempty"`    // Parsed line (for stdout_line, stderr_line)
+    Code    *int               `json:"code,omitempty"`    // Exit code (for exit)
+    Signal  string             `json:"signal,omitempty"`  // Signal name (for exit)
+    Error   *SerializedError   `json:"error,omitempty"`   // Error details (for process_error)
+}
+```
+
+---
+
+### Type: RawClaudeEventType
+
+```go
+type RawClaudeEventType string
+
+const (
+    RawEventSpawn        RawClaudeEventType = "spawn"          // CLI process started
+    RawEventStdinClosed  RawClaudeEventType = "stdin_closed"   // Stdin pipe closed
+    RawEventStdoutLine   RawClaudeEventType = "stdout_line"    // One NDJSON line from stdout
+    RawEventStderrChunk  RawClaudeEventType = "stderr_chunk"   // Raw stderr bytes
+    RawEventStderrLine   RawClaudeEventType = "stderr_line"    // One line from stderr
+    RawEventProcessError RawClaudeEventType = "process_error"  // Process-level error
+    RawEventExit         RawClaudeEventType = "exit"           // CLI process exited
+)
+```
+
+---
+
+### Type: SerializedError
+
+```go
+type SerializedError struct {
+    Name    string `json:"name,omitempty"`
+    Message string `json:"message,omitempty"`
+    Stack   string `json:"stack,omitempty"`
+}
+```
+
+---
+
+### Interface: RawEventLogger
+
+```go
+type RawEventLogger interface {
+    Log(RawClaudeEvent)
+    Close() error
+}
+```
+
+Used internally for raw event logging. Created via `CreateRawEventLogger()`.
+
+---
+
+### func CreateRawEventLogger
+
+```go
+func CreateRawEventLogger(option any) (RawEventLogger, error)
+```
+
+Creates a raw event logger based on the option value:
+- `nil` or `false`: Returns a no-op logger.
+- `true`: Creates a file logger in `./agent_logs/` directory.
+- `string` (absolute path): Creates a file logger in the specified directory.
+
+Log files are NDJSON format with timestamps, named `claude-raw-events-<timestamp>-<pid>-<random>.ndjson`.
+
+---
+
+### Type: ClaudeCodeExec
+
+Low-level CLI executor. Typically not used directly.
+
+```go
+type ClaudeCodeExec struct {
+    // unexported fields
+}
+```
+
+#### func NewClaudeCodeExec
+
+```go
+func NewClaudeCodeExec(cliPath string, env map[string]string) *ClaudeCodeExec
+```
+
+Creates a new executor. If `cliPath` is empty, defaults to `"claude"`.
+
+#### func (*ClaudeCodeExec) Run
+
+```go
+func (runner *ClaudeCodeExec) Run(ctx context.Context, request ExecRequest) error
+```
+
+Runs the Claude CLI with the given request. Manages stdin/stdout/stderr pipes, line parsing, and raw event emission. This is the low-level execution method; prefer `Session.Run()` or `Session.RunStreamed()`.
+
+---
+
+### Type: ExecRequest
+
+```go
+type ExecRequest struct {
+    Input           string           // Text prompt
+    InputItems      []InputItem      // Structured input items
+    Images          []string         // Image file paths (legacy)
+    ResumeSessionID string           // Session ID to resume
+    ContinueSession bool             // Continue most recent session
+    SessionOptions  SessionOptions   // Session configuration
+    CLIPath         string           // Override CLI path
+    Env             map[string]string // Override environment
+    Signal          context.Context  // Cancellation signal
+    RawEventLogger  RawEventLogger   // Event logger
+    OnRawEvent      func(RawClaudeEvent) // Raw event callback
+    OnLine          func(string)     // Stdout line callback
+}
+```
+
+---
+
+### Type Aliases (re-exported from parser package)
+
+```go
+type RelayEvent = parser.RelayEvent
+type TextDeltaEvent = parser.TextDeltaEvent
+type ThinkingDeltaEvent = parser.ThinkingDeltaEvent
+type ToolUseEvent = parser.ToolUseEvent
+type ToolResultEvent = parser.ToolResultEvent
+type SessionMetaEvent = parser.SessionMetaEvent
+type TurnCompleteEvent = parser.TurnCompleteEvent
+type ErrorEvent = parser.ErrorEvent
+```
+
+These aliases let you use event types directly from the main package without importing `parser`.
+
+---
+
+## Event Types (RelayEvent implementations)
+
+All event types implement the `RelayEvent` interface:
+
+```go
+type RelayEvent interface {
+    relayEvent()         // marker method (unexported)
+    EventType() string   // returns the event type string
+}
+```
+
+### TextDeltaEvent
+
+Incremental text output from the assistant.
+
+```go
+type TextDeltaEvent struct {
+    Type    string `json:"type"`    // Always "text_delta"
+    Content string `json:"content"` // The text chunk
+}
+```
+
+Constructor: `parser.NewTextDelta(content string) TextDeltaEvent`
+
+### ThinkingDeltaEvent
+
+Incremental thinking/reasoning content from the assistant.
+
+```go
+type ThinkingDeltaEvent struct {
+    Type    string `json:"type"`    // Always "thinking_delta"
+    Content string `json:"content"` // The thinking text chunk
+}
+```
+
+Constructor: `parser.NewThinkingDelta(content string) ThinkingDeltaEvent`
+
+### ToolUseEvent
+
+The assistant is invoking a tool.
+
+```go
+type ToolUseEvent struct {
+    Type      string `json:"type"`      // Always "tool_use"
+    ToolUseID string `json:"toolUseId"` // Unique tool use ID
+    ToolName  string `json:"toolName"`  // Tool name
+    Input     string `json:"input"`     // JSON-encoded tool input
+}
+```
+
+Constructor: `parser.NewToolUse(toolUseID, toolName, input string) ToolUseEvent`
+
+### ToolResultEvent
+
+Result from a tool execution.
+
+```go
+type ToolResultEvent struct {
+    Type      string `json:"type"`      // Always "tool_result"
+    ToolUseID string `json:"toolUseId"` // Matching tool use ID
+    Output    string `json:"output"`    // Tool output text
+    IsError   bool   `json:"isError"`   // Whether the tool errored
+}
+```
+
+Constructor: `parser.NewToolResult(toolUseID, output string, isError bool) ToolResultEvent`
+
+### SessionMetaEvent
+
+Session metadata, emitted at session initialization.
+
+```go
+type SessionMetaEvent struct {
+    Type  string `json:"type"`  // Always "session_meta"
+    Model string `json:"model"` // Model name (e.g. "claude-sonnet-4-20250514")
+}
+```
+
+Constructor: `parser.NewSessionMeta(model string) SessionMetaEvent`
+
+### TurnCompleteEvent
+
+Emitted when a turn finishes successfully.
+
+```go
+type TurnCompleteEvent struct {
+    Type          string   `json:"type"`                    // Always "turn_complete"
+    SessionID     string   `json:"sessionId,omitempty"`     // Session ID
+    CostUSD       *float64 `json:"costUsd,omitempty"`       // Total cost
+    InputTokens   *int     `json:"inputTokens,omitempty"`   // Input tokens used
+    OutputTokens  *int     `json:"outputTokens,omitempty"`  // Output tokens used
+    ContextWindow *int     `json:"contextWindow,omitempty"` // Context window size
+}
+```
+
+Constructor: `parser.NewTurnComplete(sessionID string) TurnCompleteEvent`
+
+### ErrorEvent
+
+An error occurred during the turn.
+
+```go
+type ErrorEvent struct {
+    Type      string `json:"type"`                // Always "error"
+    Message   string `json:"message"`             // Error message
+    SessionID string `json:"sessionId,omitempty"` // Session ID if available
+}
+```
+
+Constructor: `parser.NewError(message, sessionID string) ErrorEvent`
+
+---
+
+## Parser Sub-package API
+
+Import: `import "github.com/oceanz0312/claude-code-go/parser"`
+
+The parser package handles NDJSON line parsing from the Claude CLI stdout and translates raw CLI events into typed `RelayEvent` values.
+
+### func ParseLine
+
+```go
+func ParseLine(line string) *ClaudeEvent
+```
+
+Parses a single NDJSON line from CLI stdout into a `ClaudeEvent`. Returns `nil` if the line is empty or cannot be parsed as JSON.
+
+---
+
+### Type: ClaudeEvent
+
+Raw parsed event from CLI stdout.
+
+```go
+type ClaudeEvent struct {
+    Type          string                     `json:"type"`                    // "system", "assistant", "user", "result", "stream_event"
+    Subtype       string                     `json:"subtype,omitempty"`       // e.g. "init", "result", "error", "api_retry"
+    Message       *ClaudeMessage             `json:"message,omitempty"`       // Message content
+    Result        any                        `json:"result,omitempty"`        // Result payload
+    SessionID     string                     `json:"session_id,omitempty"`    // Session ID
+    Model         string                     `json:"model,omitempty"`         // Model name
+    Tools         []string                   `json:"tools,omitempty"`         // Available tools
+    DurationMS    *int                       `json:"duration_ms,omitempty"`   // Duration in ms
+    DurationAPIMS *int                       `json:"duration_api_ms,omitempty"` // API duration in ms
+    CostUSD       *float64                   `json:"cost_usd,omitempty"`      // Cost for this event
+    TotalCostUSD  *float64                   `json:"total_cost_usd,omitempty"` // Cumulative cost
+    IsError       *bool                      `json:"is_error,omitempty"`      // Error flag
+    NumTurns      *int                       `json:"num_turns,omitempty"`     // Number of turns
+    ModelUsage    map[string]ModelUsageEntry  `json:"modelUsage,omitempty"`   // Per-model usage
+    Usage         any                        `json:"usage,omitempty"`         // Generic usage
+    Event         any                        `json:"event,omitempty"`         // Stream event payload
+    Attempt       *int                       `json:"attempt,omitempty"`       // Retry attempt number
+    MaxRetries    *int                       `json:"max_retries,omitempty"`   // Max retry count
+    RetryDelayMS  *int                       `json:"retry_delay_ms,omitempty"` // Retry delay in ms
+    ErrorStatus   *int                       `json:"error_status,omitempty"`  // HTTP error status
+    Error         string                     `json:"error,omitempty"`         // Error message
+    Raw           map[string]any             `json:"-"`                       // Full raw JSON map
+}
+```
+
+Custom JSON unmarshaling preserves the full raw JSON in the `Raw` field.
+
+---
+
+### Type: ClaudeMessage
+
+```go
+type ClaudeMessage struct {
+    Content    []ClaudeContent `json:"content"`              // Content blocks
+    Role       string          `json:"role,omitempty"`       // "assistant" or "user"
+    StopReason string          `json:"stop_reason,omitempty"` // Stop reason
+    ID         string          `json:"id,omitempty"`         // Message ID
+}
+```
+
+---
+
+### Type: ClaudeContent
+
+```go
+type ClaudeContent struct {
+    Type      string `json:"type"`                 // "text", "thinking", "tool_use", "tool_result"
+    Text      string `json:"text,omitempty"`       // Text content
+    Thinking  string `json:"thinking,omitempty"`   // Thinking content
+    ID        string `json:"id,omitempty"`         // Block ID (for tool_use)
+    Name      string `json:"name,omitempty"`       // Tool name (for tool_use)
+    Input     any    `json:"input,omitempty"`      // Tool input (for tool_use)
+    Content   any    `json:"content,omitempty"`    // Result content (for tool_result)
+    ToolUseID string `json:"tool_use_id,omitempty"` // Matching tool use ID (for tool_result)
+    IsError   *bool  `json:"is_error,omitempty"`   // Error flag (for tool_result)
+}
+```
+
+---
+
+### Type: ModelUsageEntry
+
+```go
+type ModelUsageEntry struct {
+    InputTokens              int `json:"inputTokens"`
+    OutputTokens             int `json:"outputTokens"`
+    CacheReadInputTokens     int `json:"cacheReadInputTokens"`
+    CacheCreationInputTokens int `json:"cacheCreationInputTokens"`
+    ContextWindow            int `json:"contextWindow"`
+}
+```
+
+---
+
+### Type: Translator
+
+Stateful translator that converts `ClaudeEvent` values into `[]RelayEvent`. Tracks content block indices and session metadata to produce clean, deduplicated event streams.
+
+```go
+type Translator struct {
+    // unexported fields
+}
+```
+
+#### func NewTranslator
+
+```go
+func NewTranslator() *Translator
+```
+
+Creates a new translator instance.
+
+#### func (*Translator) SessionID
+
+```go
+func (translator *Translator) SessionID() string
+```
+
+Returns the session ID discovered during translation (from `system/init` events).
+
+#### func (*Translator) Model
+
+```go
+func (translator *Translator) Model() string
+```
+
+Returns the model name discovered during translation.
+
+#### func (*Translator) Reset
+
+```go
+func (translator *Translator) Reset()
+```
+
+Resets the content tracking state. Called automatically on turn completion.
+
+#### func (*Translator) Translate
+
+```go
+func (translator *Translator) Translate(raw ClaudeEvent) []RelayEvent
+```
+
+Translates a `ClaudeEvent` into zero or more `RelayEvent` values. Handles:
+- `system/init` -> `SessionMetaEvent`
+- `system/result` -> `TurnCompleteEvent` or `ErrorEvent`
+- `result` -> `TurnCompleteEvent` (with usage) or `ErrorEvent`
+- `assistant` -> `TextDeltaEvent`, `ThinkingDeltaEvent`, `ToolUseEvent`
+- `user` -> `ToolResultEvent` (for tool_result content blocks)
+
+---
+
+### func ExtractContent
+
+```go
+func ExtractContent(raw any) string
+```
+
+Extracts text content from various formats: plain string, array of content blocks, or any other value (via `fmt.Sprint`). Used to normalize tool result content.
+
+---
+
+## Usage Examples
+
+### Buffered Mode (Non-streaming)
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "log"
+
+    claudecodego "github.com/oceanz0312/claude-code-go"
+)
+
+func main() {
+    claude := claudecodego.NewClaudeCode(claudecodego.ClaudeCodeOptions{
+        APIKey: "sk-ant-...",
+    })
+
+    session := claude.StartSession(claudecodego.SessionOptions{
+        Model:                      "sonnet",
+        DangerouslySkipPermissions: true,
+    })
+
+    turn, err := session.Run(context.Background(), "Explain the architecture of this project")
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    fmt.Println(turn.FinalResponse)
+    fmt.Printf("Cost: $%.4f\n", turn.Usage.CostUSD)
+    fmt.Printf("Session: %s\n", turn.SessionID)
+}
+```
+
+### Streaming Mode
+
+```go
+stream, err := session.RunStreamed(context.Background(), "Refactor the auth module")
+if err != nil {
+    log.Fatal(err)
+}
+
+for {
+    event, ok, err := stream.Next(context.Background())
+    if err != nil {
+        log.Fatal(err)
+    }
+    if !ok {
+        break
+    }
+
+    switch e := event.(type) {
+    case claudecodego.TextDeltaEvent:
+        fmt.Print(e.Content)
+    case claudecodego.ThinkingDeltaEvent:
+        fmt.Printf("[thinking] %s", e.Content)
+    case claudecodego.ToolUseEvent:
+        fmt.Printf("\n> Tool: %s(%s)\n", e.ToolName, e.Input)
+    case claudecodego.ToolResultEvent:
+        fmt.Printf("> Result: %s\n", e.Output)
+    case claudecodego.SessionMetaEvent:
+        fmt.Printf("[model: %s]\n", e.Model)
+    case claudecodego.TurnCompleteEvent:
+        fmt.Printf("\n--- Turn complete (session: %s) ---\n", e.SessionID)
+    case claudecodego.ErrorEvent:
+        fmt.Printf("Error: %s\n", e.Message)
+    }
+}
+
+if err := stream.Wait(); err != nil {
+    log.Fatal(err)
+}
+```
+
+### Multi-turn Conversation
+
+```go
+session := claude.StartSession(sessionOptions)
+
+// Turn 1
+turn1, _ := session.Run(ctx, "Which files handle authentication?")
+fmt.Println(turn1.FinalResponse)
+
+// Turn 2 -- session resume is automatic
+turn2, _ := session.Run(ctx, "Refactor those files to use JWT")
+fmt.Println(turn2.FinalResponse)
+
+// Turn 3
+turn3, _ := session.Run(ctx, "Write tests for the new JWT auth")
+fmt.Println(turn3.FinalResponse)
+```
+
+### Resume / Continue Session
+
+```go
+// Resume a specific session by ID
+session := claude.ResumeSession("previous-session-id", sessionOptions)
+turn, _ := session.Run(ctx, "Continue the previous work")
+
+// Continue the most recent session
+session := claude.ContinueSession(sessionOptions)
+turn, _ := session.Run(ctx, "What were we working on?")
+```
+
+### Image Input
+
+```go
+turn, err := session.Run(ctx, []claudecodego.InputItem{
+    {Type: claudecodego.InputTypeText, Text: "What's in this screenshot?"},
+    {Type: claudecodego.InputTypeLocalImage, Path: "/path/to/screenshot.png"},
+})
+```
+
+### Structured Output (JSON Schema)
+
+```go
+session := claude.StartSession(claudecodego.SessionOptions{
+    Model:      "sonnet",
+    JSONSchema: map[string]any{
+        "type": "object",
+        "properties": map[string]any{
+            "summary": map[string]any{"type": "string"},
+            "score":   map[string]any{"type": "number"},
+        },
+        "required": []string{"summary", "score"},
+    },
+    DangerouslySkipPermissions: true,
+})
+
+turn, err := session.Run(ctx, "Analyze this codebase quality")
+if err != nil {
+    log.Fatal(err)
+}
+// turn.StructuredOutput contains the parsed JSON object
+fmt.Printf("%v\n", turn.StructuredOutput)
+```
+
+### Cancellation / Timeout
+
+```go
+ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
+defer cancel()
+
+turn, err := session.Run(ctx, "Perform a potentially long operation")
+if err != nil {
+    // context.DeadlineExceeded or context.Canceled
+    log.Printf("Cancelled: %v", err)
+}
+```
+
+### FailFast API Error Detection
+
+```go
+turn, err := session.Run(ctx, "prompt", claudecodego.TurnOptions{
+    FailFastOnCLIAPIError: true, // Detect auth/quota errors in seconds
+})
+```
+
+### Raw Event Logging
+
+```go
+// Auto-create log directory at ./agent_logs/
+session := claude.StartSession(claudecodego.SessionOptions{
+    Model:       "sonnet",
+    RawEventLog: true,
+})
+
+// Or specify a directory
+session := claude.StartSession(claudecodego.SessionOptions{
+    Model:       "sonnet",
+    RawEventLog: "/absolute/path/to/logs/",
+})
+```
+
+### Raw Event Callback
+
+```go
+turn, err := session.Run(ctx, "prompt", claudecodego.TurnOptions{
+    OnRawEvent: func(event claudecodego.RawClaudeEvent) {
+        fmt.Printf("[raw] %s: %s\n", event.Type, event.Line)
+    },
+})
+```
+
+### Custom CLI Path
+
+```go
+claude := claudecodego.NewClaudeCode(claudecodego.ClaudeCodeOptions{
+    CLIPath: "/opt/claude-code/node_modules/.bin/claude",
+    APIKey:  "sk-ant-...",
+})
+```
+
+### Multi-Agent Configuration
+
+```go
+session := claude.StartSession(claudecodego.SessionOptions{
+    Model: "sonnet",
+    Agents: map[string]claudecodego.AgentDefinition{
+        "reviewer": {
+            Description: "Code reviewer",
+            Prompt:      "You are a code reviewer. Review code for bugs and improvements.",
+            Model:       "sonnet",
+        },
+    },
+    Agent: "reviewer",
+})
+```
+
+---
+
+## Error Handling
+
+- **`context.DeadlineExceeded` / `context.Canceled`**: Returned when the provided context is cancelled or times out.
+- **`errors.New("context is nil")`**: Returned if `ctx` is nil.
+- **CLI exit errors**: Returned as `fmt.Errorf("Claude CLI exited with code %d: %s", ...)` with stderr text.
+- **Stream errors**: `ErrorEvent` in the relay event stream. In buffered mode (`Run()`), stream errors are converted to `error` return values.
+- **FailFast API errors**: When `FailFastOnCLIAPIError` is true, API errors (authentication, quota, rate limit) are detected from stderr/stdout patterns and surfaced immediately instead of waiting for the full CLI timeout.
+- **Raw event log errors**: `CreateRawEventLogger()` returns an error for invalid paths (non-absolute string paths).
+
+### Error Detection Patterns
+
+The SDK detects fatal API errors by scanning:
+1. **stderr**: Lines containing "API Error:" are extracted.
+2. **stdout**: Events with `type:"system", subtype:"api_retry"` are checked for `error_status` and `error` fields. The error message includes status code, error text, attempt count, and retry delay.
+
+---
+
+## Architecture
+
+```
+Your Go Code
+    |
+    v
+ClaudeCode --> Session --> Run() / RunStreamed()
+    |
+    v
+ClaudeCodeExec
+  Spawns `claude` CLI with --output-format stream-json
+  Connects stdin/stdout/stderr pipes
+    |
+    | stdout lines (NDJSON)
+    v
+parser package
+  ParseLine() --> ClaudeEvent --> Translator
+                                    |
+                                    v
+                              []RelayEvent
+  (TextDelta, ThinkingDelta, ToolUse, ToolResult,
+   SessionMeta, TurnComplete, Error)
+```
+
+The SDK maintains a dual-layer event system:
+- **Raw events** (`RawClaudeEvent`): Process-level events (spawn, stdin close, stdout/stderr lines, exit).
+- **Relay events** (`RelayEvent`): Semantic events translated from the NDJSON protocol.
+
+Stream deduplication ensures that when the CLI sends both incremental stream events (`stream_event` type) and full assistant snapshots (`assistant` type), the text/thinking content is not duplicated in the relay event stream.
