@@ -212,7 +212,7 @@ type SessionOptions struct {
 ### Type: Input
 
 ```go
-type Input = any
+type Input any
 ```
 
 Accepts either:
@@ -800,6 +800,44 @@ func ExtractContent(raw any) string
 ```
 
 Extracts text content from various formats: plain string, array of content blocks, or any other value (via `fmt.Sprint`). Used to normalize tool result content.
+
+---
+
+### Stdin Message Builders
+
+Functions for constructing NDJSON messages to send to the CLI's stdin via the `stream-json` input protocol.
+
+#### func CreateUserMessage
+
+```go
+func CreateUserMessage(content string) string
+```
+
+Creates a JSON user message string. Returns an NDJSON line (with trailing newline).
+
+#### func CreateApproveMessage
+
+```go
+func CreateApproveMessage(toolUseID string) string
+```
+
+Creates a JSON tool approval message. Returns an NDJSON line.
+
+#### func CreateDenyMessage
+
+```go
+func CreateDenyMessage(toolUseID string) string
+```
+
+Creates a JSON tool denial message. Returns an NDJSON line.
+
+#### func CreateToolResultMessage
+
+```go
+func CreateToolResultMessage(toolUseID, content string) string
+```
+
+Creates a JSON tool result message. Returns an NDJSON line.
 
 ---
 
